@@ -14,16 +14,19 @@ const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/menuoso';
 mongoose.connect(mongoUrl);
 console.log('Running with mongodb url: ' + mongoUrl);
 
+// Set root folder
+app.use(express.static(path.join(__dirname, 'src')));
+
 // Set Angular folder
-app.use(express.static(path.join(__dirname, 'app')));
+app.use('/angular', express.static(path.join(__dirname, 'src/app')));
+
+// Set node_modules folder
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 // Parse requests as JSON
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// Configure routes
-app.use(express.static(path.join(__dirname, 'src')));
-
 app.listen(port, () => {
-	console.log('Server listening on port ' + port);
+	console.log('Menuoso server listening on port ' + port);
 });
