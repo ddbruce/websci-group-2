@@ -11,6 +11,11 @@
 Paper menus at restaurants are not easy to change. An unreasonable monetary and labor cost is incurred when formatting, and producing new menus following even small changes, such as adding or removing a single item. Menus also cannot be changed remotely.
 Existing commercial digital menu systems are expensive, up to and exceeding $1,000 for systems powering two displays, not including the price of the monitors themselves. On the more cost-effective side, the likes of PowerPoint do not look good, and do not represent menu items in easily mutable data structures. Current solutions don’t allow for integration with websites to have consistent menus with those in-house.
 
+## Users/Stakeholders
+- Managers: Managers are the people who own or help lead a small business, specifically a fast-food restaurant or a cafe. Managers will take ownership of the menu that is created.
+- Edit-Permission-User: This user is given permission by the manager to access and edit a menu within the interface. Permissions are given on a menu-by-menu basis by the manager.
+- Customers: The final group of stakeholders includes everyone who will view, but not edit, created menus. Menuoso will generate value for users by making the restaurant experience easier and more modern, e.g. by displaying dietary information or information which can change from day to day like specials and deals.
+
 ## Solution
 For our semester project, we propose an easy-to-access and -update, web-based open-source software platform for allowing restaurant managers to display their products on the screen(s) of their choosing. The product also allows for updating menus from a mobile device as well as customers viewing the menu from their own mobile device.
 The physical menus will be customer-supplied television screens each run with a dedicated Raspberry Pi driver. The Pis will be configured to automatically open a browser and navigate to the menu display on boot. Additionally, WebSockets may be used to force a menu update, rather than forcing the restaurant owner to shut down and restart. Furthermore, other features may be accessible on the Pis from the menu dashboard, including the ability to blank the screen between certain hours (useful for OLED displays), as well as shut down the televisions using RS-485, IR blaster, or USB control during off-hours.
