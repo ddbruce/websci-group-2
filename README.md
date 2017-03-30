@@ -13,7 +13,7 @@ Authors
 
 ### Prerequisites
 
-Make sure you have git and node.js installed.
+Make sure you have git, node.js, and MongoDB installed.
 
 ### Clone `Menuoso`
 
@@ -28,7 +28,17 @@ cd menuoso
 npm install
 ```
 
-### Run `server.js`
+### Run MongoDB daemon if you're not doing so already
+
+```shell
+mongod
+```
+
+From the [MongoDB documentation](https://docs.mongodb.com/manual/reference/program/mongod/#bin.mongod):
+
+>**mongod** is the primary daemon process for the MongoDB system. It handles data requests, manages data access, and performs background management operations.
+
+### Run `server.js` in a separate terminal
 
 ```shell
 npm start
