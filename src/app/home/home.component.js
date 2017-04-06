@@ -16,7 +16,7 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'menuoso-home',
-            templateUrl: './../views/home.html',
+            templateUrl: './../views/home.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
