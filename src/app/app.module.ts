@@ -22,6 +22,6 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   providers: [ MenuService ],
-  bootstrap:    [ HeaderComponent, AppComponent ]
+  bootstrap:    [ AppComponent, HeaderComponent ]
 })
 export class AppModule { }
