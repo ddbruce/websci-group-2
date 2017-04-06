@@ -20,9 +20,10 @@ var MenuComponent = (function () {
             selector: 'menu',
             templateUrl: './../views/menu.component.html',
         }), 
-        __metadata('design:paramtypes', [menu_1.Menu])
+        __metadata('design:paramtypes', [(typeof (_a = typeof menu_1.Menu !== 'undefined' && menu_1.Menu) === 'function' && _a) || Object])
     ], MenuComponent);
     return MenuComponent;
+    var _a;
 }());
 exports.MenuComponent = MenuComponent;
 //# sourceMappingURL=menu.component.js.map

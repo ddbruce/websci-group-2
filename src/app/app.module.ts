@@ -8,6 +8,7 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuBuilderComponent } from './menu-builder/menu-builder.component';
+import { MDL } from './directives/MaterialDesignLiteUpgradeElement';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     MenuComponent,
-    MenuBuilderComponent
+    MenuBuilderComponent,
+    MDL
   ],
   providers: [ MenuService ],
   bootstrap: [ AppComponent ]
