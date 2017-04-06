@@ -3,6 +3,7 @@
 import { Section } from './section';
 
 export class Menu {
+  id: number;
   name: string;
   sections: Array<Section>;
   isLive: boolean; // front-end only
