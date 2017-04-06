@@ -6,6 +6,7 @@ import { MenuService } from './services/menu.service';
 import { HeaderComponent } from './header/header.component';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   declarations: [
     HeaderComponent,
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   providers: [ MenuService ],
   bootstrap:    [ AppComponent, HeaderComponent ]
