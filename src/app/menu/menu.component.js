@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MenuService = (function () {
-    function MenuService() {
+var menu_1 = require('../menu');
+var MenuComponent = (function () {
+    function MenuComponent(menu) {
+        this.name = menu.name;
+        this.sections = menu.sections;
     }
-    MenuService.prototype.getMenus = function () {
-        // TODO make db call using API endpoint to get menus associated with current user
-        return this.menus;
-    };
-    MenuService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], MenuService);
-    return MenuService;
+    MenuComponent = __decorate([
+        core_1.Component({
+            selector: 'menu',
+            templateUrl: './../views/menu.component.html',
+        }), 
+        __metadata('design:paramtypes', [menu_1.Menu])
+    ], MenuComponent);
+    return MenuComponent;
 }());
-exports.MenuService = MenuService;
-//# sourceMappingURL=menu.service.js.map
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

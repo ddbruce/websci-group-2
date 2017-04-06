@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
 
+import { MenuService } from './services/menu.service';
+
 @Component({
   selector: 'my-app',
-  template: `<h1>Welcome to {{name}}</h1>`,
+  templateUrl: './views/app.component.html',
 })
-export class AppComponent  { name = 'Menuoso'; }
+export class AppComponent  {
+  name = 'Menuoso';
+
+  constructor(private menuService: MenuService) { }
+}

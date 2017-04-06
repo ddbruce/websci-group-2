@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Angular QuickStart</title>
+    <base href="/">
+    <title>Menuoso</title>
+    <link rel="icon" href="assets/favicon.ico">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="/">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Material Design Lite style -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/material.red-amber.min.css">
+    <script src="node_modules/material-design-lite/material.min.js"></script>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -20,6 +27,8 @@
   </head>
 
   <body>
-    <my-app>Loading AppComponent content here ...</my-app>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <my-app>Loading Menuoso...</my-app>
+    </div>
   </body>
 </html>

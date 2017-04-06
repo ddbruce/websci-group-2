@@ -1,11 +1,31 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
+import { MenuService } from './services/menu.service';
+import { HeaderComponent } from './header/header.component';
 import { AppComponent }  from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { MenuBuilderComponent } from './menu-builder/menu-builder.component';
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent }
+];
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  imports:      [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    MenuComponent,
+    MenuBuilderComponent
+  ],
+  providers: [ MenuService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
