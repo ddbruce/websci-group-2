@@ -1,0 +1,9 @@
+<h1>{{ name }}</h1>
+
+<div *ngFor="let section of sections">
+  <h2>{{ section.name }}</h2>
+
+  <div *ngFor="let item of section.items">
+    {{ item.name }} - {{ item.price }}
+  </div>
+</div>
