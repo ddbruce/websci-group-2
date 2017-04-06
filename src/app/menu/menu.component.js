@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var menu_1 = require('../menu');
+var menu_1 = require('../_models/menu');
 var MenuComponent = (function () {
     function MenuComponent(menu) {
         this.name = menu.name;
@@ -20,10 +20,9 @@ var MenuComponent = (function () {
             selector: 'menu',
             templateUrl: './../views/menu.component.html',
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof menu_1.Menu !== 'undefined' && menu_1.Menu) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [menu_1.Menu])
     ], MenuComponent);
     return MenuComponent;
-    var _a;
 }());
 exports.MenuComponent = MenuComponent;
 //# sourceMappingURL=menu.component.js.map

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Menu } from '../menu';
-import { Section } from '../section';
-import { Item } from '../item';
+import { Menu } from '../_models/menu';
+import { Section } from '../_models/section';
+import { Item } from '../_models/item';
 import { MenuService } from '../services/menu.service';
 
 @Component({
