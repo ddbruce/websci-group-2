@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuBuilderComponent } from './menu-builder/menu-builder.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    MenuBuilderComponent
   ],
   providers: [ MenuService ],
   bootstrap: [ AppComponent ]
