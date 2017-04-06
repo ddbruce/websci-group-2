@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HeaderComponent = (function () {
     function HeaderComponent() {
+        // TODO set this value based on whether user is logged in
+        this.loggedIn = false;
     }
     HeaderComponent = __decorate([
         core_1.Component({

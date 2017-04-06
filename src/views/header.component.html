@@ -9,8 +9,8 @@
     <!-- Navigation -->
     <div class="android-navigation-container">
       <nav class=" mdl-navigation">
-        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Sign Up</button>
+        <a *ngIf="!loggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a>
+        <button *ngIf="!loggedIn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Sign Up</button>
       </nav>
     </div>
 
