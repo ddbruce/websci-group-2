@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
-    "serve": "node server.js",
+    "serve": "node server/server.js",
     "start": "concurrently \"npm run build:watch\" \"npm run serve\" \"npm run build-css\"",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "build-css": "concurrently \"node-sass src/assets/scss/ -o src/assets/css/\" \"node-sass -w src/assets/scss/ -o src/assets/css/\""

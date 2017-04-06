@@ -16,13 +16,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Set root folder
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, '../src')));
 
 // Set Angular folder
-app.use('/angular', express.static(path.join(__dirname, 'src/app')));
+app.use('/angular', express.static(path.join(__dirname, '../src/app')));
 
 // Set node_modules folder
-app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 
 // Configure out routes
 app.use("/", routes);
