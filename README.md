@@ -44,4 +44,8 @@ From the [MongoDB documentation](https://docs.mongodb.com/manual/reference/progr
 npm start
 ```
 
-This is equivalent to `concurrently \"npm run build:watch\" \"npm run serve\"`, which starts an Express webserver on `localhost:3000` and rebuilds (transpiles) `.js` files on changes to `.ts` files.
+This command does the following:
+
+1. rebuilds (transpiles) `.js` files on changes to `.ts` files
+2. starts an Express webserver on `localhost:3000`
+3. rebuilds `.css` files on changes to `.scss` files

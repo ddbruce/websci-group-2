@@ -3,6 +3,7 @@
 import { Item } from './item';
 
 export class Section {
+  id: number;
   name: string;
   items: Array<Item>;
 }

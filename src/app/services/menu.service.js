@@ -13,7 +13,7 @@ var MenuService = (function () {
     function MenuService() {
     }
     MenuService.prototype.getMenus = function () {
-        // TODO make db call to get menus associated with current user
+        // TODO make db call using API endpoint to get menus associated with current user
         return this.menus;
     };
     MenuService = __decorate([
