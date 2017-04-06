@@ -8,9 +8,10 @@ h1 {
   background: url('../assets/demos/transparent.jpg') center / cover;
 }
 
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
+.demo-layout-transparent {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white;
+  .mdl-layout__header, .mdl-layout__drawer-button {
+    color: white;
+  }
 }

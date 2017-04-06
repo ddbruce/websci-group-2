@@ -1,3 +1,5 @@
 node_modules
 src/app/**/*.js
 src/app/**/*.js.map
+src/app/assets/css
+!src/app/assets/css/material.red-amber.min.css

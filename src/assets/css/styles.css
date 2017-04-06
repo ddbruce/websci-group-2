@@ -1,0 +1,13 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%; }
+
+.demo-layout-transparent {
+  background: url("../assets/demos/transparent.jpg") center/cover; }
+
+.demo-layout-transparent {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */ }
+  .demo-layout-transparent .mdl-layout__header, .demo-layout-transparent .mdl-layout__drawer-button {
+    color: white; }
