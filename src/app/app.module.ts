@@ -3,12 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MenuService } from './services/menu.service';
+import { MDL } from './directives/MaterialDesignLiteUpgradeElement';
 import { HeaderComponent } from './header/header.component';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuBuilderComponent } from './menu-builder/menu-builder.component';
-import { MDL } from './directives/MaterialDesignLiteUpgradeElement';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -21,11 +22,12 @@ const appRoutes: Routes = [
   ],
   declarations: [
     AppComponent,
+    MDL,
     HeaderComponent,
     HomeComponent,
     MenuComponent,
-    MenuBuilderComponent,
-    MDL
+    LoginComponent,
+    MenuBuilderComponent
   ],
   providers: [ MenuService ],
   bootstrap: [ AppComponent ]
