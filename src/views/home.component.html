@@ -2,4 +2,12 @@
 
 <button>New Menu</button>
 
-<p>TODO use MenuService to retrieve all of user's menus</p>
+<div *ngIf="menus.length == 0">
+  You don't have any menus yet!
+</div>
+
+<div *ngFor="let menu of menus">
+  <h3>{{ menu.name }}</h3>
+
+  <button [disabled]="!menu.isLive">Go Live</button>
+</div>

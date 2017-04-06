@@ -9,16 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var menu_service_1 = require('../services/menu.service');
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(menuService) {
+        this.menuService = menuService;
         this.title = 'Your Menus';
+        this.menus = [];
+        // this.menus = this.menuService.getMenus();
     }
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'menuoso-home',
             templateUrl: './../views/home.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [menu_service_1.MenuService])
     ], HomeComponent);
     return HomeComponent;
 }());

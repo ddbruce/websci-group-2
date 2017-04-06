@@ -5,4 +5,5 @@ import { Section } from './section';
 export class Menu {
   name: string;
   sections: Array<Section>;
+  isLive: boolean; // front-end only
 }
