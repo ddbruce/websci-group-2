@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Menu } from '../_models/menu';
-import { MenuService } from '../services/menu.service';
+import { Menu } from '../../_models/menu';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'menuoso-home',
-  templateUrl: './../views/home.component.html',
+  templateUrl: './app/components/home/home.component.html',
 })
 
 export class HomeComponent {

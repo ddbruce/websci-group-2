@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Menu } from '../_models/menu';
-import { Section } from '../_models/section';
-import { Item } from '../_models/item';
+import { Menu } from '../../_models/menu';
+import { Section } from '../../_models/section';
+import { Item } from '../../_models/item';
 
 @Component({
   selector: 'menu',
-  templateUrl: './../views/menu.component.html',
+  templateUrl: './app/components/menu/menu.component.html',
 })
 
 export class MenuComponent {

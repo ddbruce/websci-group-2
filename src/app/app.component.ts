@@ -3,7 +3,7 @@ import { MenuService } from './services/menu.service';
 
 @Component({
   selector: 'my-app',
-  templateUrl: './views/app.component.html',
+  templateUrl: './app/app.component.html',
 })
 
 export class AppComponent  {

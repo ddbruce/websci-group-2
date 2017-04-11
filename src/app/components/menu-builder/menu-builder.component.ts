@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Menu } from '../_models/menu';
-import { Section } from '../_models/section';
-import { Item } from '../_models/item';
-import { MenuService } from '../services/menu.service';
+import { Menu } from '../../_models/menu';
+import { Section } from '../../_models/section';
+import { Item } from '../../_models/item';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'menu-builder',
-  templateUrl: './../views/menu-builder.component.html',
+  templateUrl: './app/components/menu-builder/menu-builder.component.html',
 })
 
 export class MenuBuilderComponent {
