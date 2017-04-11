@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, AfterContentInit } from '@angular/core';
 import { Menu } from '../../_models/menu';
 import { MenuService } from '../../services/menu.service';
 
@@ -10,10 +10,23 @@ import { MenuService } from '../../services/menu.service';
 export class HomeComponent {
   title: string;
   menus: Array<Menu>;
+  newMenuDialog: any;
+  domElement: any;
+  menuService: any;
 
-  constructor(private menuService: MenuService) {
+  constructor(private _menuService: MenuService, element: ElementRef) {
     this.title = 'Your Menus';
     this.menus = [];
-    // this.menus = this.menuService.getMenus();
+    this.domElement = element;
+    this.menuService = _menuService;
+  }
+
+  ngAfterContentInit(): void {
+    this.newMenuDialog = this.domElement.nativeElement.querySelector('#new-menu-dialog');
+  }
+
+  createNewMenu() {
+    // menuService.newMenu()
+    console.log('TODO grab form info and bring user to addItems dialog (component?)');
   }
 }
