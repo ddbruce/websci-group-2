@@ -2,7 +2,7 @@ const express = require("express");
 var user = require("../models/user.js")
 var router = express.Router();
 
-router.get("/", function(req, res) {
+router.post("/", function(req, res) {
     // Get parameters from the post request
     var params = req.body;
 
