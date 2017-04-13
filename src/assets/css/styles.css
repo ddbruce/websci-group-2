@@ -11,27 +11,3 @@ h1 {
      your background is light. */ }
   .demo-layout-transparent .mdl-layout__header, .demo-layout-transparent .mdl-layout__drawer-button {
     color: white; }
-
-.mdl-grid.center-items {
-  justify-content: center;
-}
-
-.full-width{
-  width: 100%;
-}
-
-
-.mdl-textfield-login {
-    position: relative;
-    font-size: 16px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 20px 0;
-    outline: none;
-}
-
-
-input:focus {outline:none;}

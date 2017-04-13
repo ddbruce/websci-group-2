@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 <div class="mdl-grid center-items">
   <div class="mdl-cell mdl-cell--3-col">
-        <form action="#">
+        <form name="loginForm" (ngSubmit)="login()" #f="ngForm" novalidate>
           <!-- username input -->
           <h1><strong>Welcome Back!</strong></h1>
           <h4>Sign in and get working on your menus!</h4>
@@ -18,22 +17,5 @@
           <br>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="login()">Login</button>
         </form>
-=======
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col">
-    <form name="loginForm" (ngSubmit)="login()" #f="ngForm" novalidate>
-      <!-- username input -->
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="username">
-        <label class="mdl-textfield__label" for="sample3">Username</label>
-      </div>
-      <!-- password input -->
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="password">
-        <label class="mdl-textfield__label" for="sample3">Password</label>
-      </div>
-      <button type="submit">Login</button>
-    </form>
->>>>>>> 60fefd2bc64270bdfaf11ba4a665f2aa16d8d062
   </div>
 </div>
