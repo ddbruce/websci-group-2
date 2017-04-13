@@ -29,3 +29,6 @@ h1 {
 
 input:focus {
   outline: none; }
+
+.logo {
+  width: 100px; }
