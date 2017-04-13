@@ -5,13 +5,36 @@ h1 {
 }
 
 .demo-layout-transparent {
-  background: url('../assets/demos/transparent.jpg') center / cover;
-}
-
-.demo-layout-transparent {
+  background: url("../assets/demos/transparent.jpg") center/cover;
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
   .mdl-layout__header, .mdl-layout__drawer-button {
     color: white;
+  }
+}
+
+.mdl-grid.center-items {
+  justify-content: center;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.mdl-textfield-login {
+  position: relative;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  outline: none;
+}
+
+input {
+  &:focus {
+    outline: none;
   }
 }
