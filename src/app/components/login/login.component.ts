@@ -5,4 +5,26 @@ import { Component } from '@angular/core';
   templateUrl: './app/components/login/login.component.html',
 })
 
-export class LoginComponent {}
+export class LoginComponent {
+  isRegistering: boolean;
+
+  constructor() {
+    this.isRegistering = false;
+  }
+
+  showRegisterForm() {
+    this.isRegistering = true;
+  }
+
+  showLoginForm() {
+    this.isRegistering = false;
+  }
+
+  login() {
+    console.log('TODO login');
+  }
+
+  register() {
+    console.log('TODO register');
+  }
+}
