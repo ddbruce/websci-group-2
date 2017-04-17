@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuBuilderComponent } from './components/menu-builder/menu-builder.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     HomeComponent,
     MenuComponent,
     LoginComponent,
+    SignupComponent,
     MenuBuilderComponent
   ],
   providers: [ MenuService ],

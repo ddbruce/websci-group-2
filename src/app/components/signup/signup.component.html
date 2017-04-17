@@ -1,0 +1,26 @@
+<div class="mdl-grid center-items">
+  <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+        <form name="loginForm" (ngSubmit)="login()" novalidate>
+          <!-- username input -->
+          <h1><strong>Your menus await</strong></h1>
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username">
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+          </div>
+          <br>
+          <!-- email input -->
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="email">
+            <label class="mdl-textfield__label" for="sample3">Email</label>
+          </div>
+          <br>
+          <!-- password input -->
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="full-width mdl-textfield__input" type="text" id="password">
+            <label class="full-width mdl-textfield__label" for="sample3">Password (at least 8 characters!)</label>
+          </div>
+          <br>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="login()">Login</button>
+        </form>
+  </div>
+</div>
