@@ -2,12 +2,11 @@ const express = require("express");
 var user = require("../models/user.js")
 var router = express.Router();
 
-router.post("/", function(req, res) {
+router.post("/", function (req, res) {
     // Get parameters from the post request
     var params = req.body;
-
     // Find if any user matches the login credentials
-    users.find({
+    user.find({
         username: params.username,
         password: params.password
     }, function (err, data) {
@@ -15,10 +14,14 @@ router.post("/", function(req, res) {
             res.send(400);
             return;
         }
-        res.send(200, {
-            id:data.id,
-            username: data.username,
-        });
+        if (data.length) {
+            res.status(200).send({
+                id: data[0].id,
+                username: data[0].username,
+            });
+        } else {
+            res.send(400);
+        }
     });
 });
 
