@@ -1,48 +1,54 @@
-<div class="mdl-grid center-items">
-  <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
-    <!-- login form -->
-    <form name="loginForm" [hidden]="isRegistering">
-      <!-- username input -->
-      <h1><strong>Welcome back to Menuoso!</strong></h1>
-      <h4>Get working on your menus!</h4>
-      <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="username">
-        <label class="mdl-textfield__label" for="username">Username</label>
-      </div>
-      <br>
-      <!-- password input -->
-      <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-        <input class="full-width mdl-textfield__input" type="password" id="password">
-        <label class="full-width mdl-textfield__label" for="password">Password</label>
-      </div>
-      <br>
-      <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Log In</button>
-      <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showRegisterForm()">Don't have an account? Sign Up</button>
-    </form>
+<div class="demo-ribbon"></div>
+  <div class="demo-main">
+    <div class="mdl-grid center-items">
+      <div class="mdl-cell ribbon-logo"><img class="ribbon-image" src="../../../assets/menuoso_logo_white.png"></div>
+    </div>
+    <div class="mdl-grid center-items">
+      <div class="card-blank mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+        <!-- login form -->
+        <form name="loginForm" [hidden]="isRegistering">
+          <!-- username input -->
+          <h1><strong>Welcome back!</strong></h1>
+          <h4>Get working on your menus!</h4>
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <br>
+          <!-- password input -->
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="full-width mdl-textfield__input" type="password" id="password">
+            <label class="full-width mdl-textfield__label" for="password">Password</label>
+          </div>
+          <br>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Log In</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showRegisterForm()">Don't have an account? Sign Up</button>
+        </form>
 
-    <!-- register form -->
-    <form name="loginForm" [hidden]="!isRegistering">
-      <!-- username input -->
-      <h1><strong>Welcome to Menuoso!</strong></h1>
-      <h4>Create a new account here.</h4>
-      <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="register-username">
-        <label class="mdl-textfield__label" for="register-username">Username</label>
+        <!-- register form -->
+        <form name="loginForm" [hidden]="!isRegistering">
+          <!-- username input -->
+          <h1><strong>Welcome to Menuoso!</strong></h1>
+          <h4>Create a new account here.</h4>
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="register-username">
+            <label class="mdl-textfield__label" for="register-username">Username</label>
+          </div>
+          <br>
+          <!-- password input -->
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="full-width mdl-textfield__input" type="password" id="register-password">
+            <label class="full-width mdl-textfield__label" for="register-password">Password</label>
+          </div>
+          <!-- password input -->
+          <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
+            <input class="full-width mdl-textfield__input" type="password" id="confirm-password">
+            <label class="full-width mdl-textfield__label" for="confirm-password">Confirm Password</label>
+          </div>
+          <br>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="register()">Sign Up</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Already have an account? Log In</button>
+        </form>
       </div>
-      <br>
-      <!-- password input -->
-      <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-        <input class="full-width mdl-textfield__input" type="password" id="register-password">
-        <label class="full-width mdl-textfield__label" for="register-password">Password</label>
-      </div>
-      <!-- password input -->
-      <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-        <input class="full-width mdl-textfield__input" type="password" id="confirm-password">
-        <label class="full-width mdl-textfield__label" for="confirm-password">Confirm Password</label>
-      </div>
-      <br>
-      <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="register()">Sign Up</button>
-      <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Already have an account? Log In</button>
-    </form>
+    </div>
   </div>
-</div>
