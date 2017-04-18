@@ -8,8 +8,7 @@
         <!-- login form -->
         <form name="loginForm" [hidden]="isRegistering">
           <!-- username input -->
-          <h1><strong>Welcome back!</strong></h1>
-          <h4>Get working on your menus!</h4>
+          <h4>Sign in</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="username">
             <label class="mdl-textfield__label" for="username">Username</label>
@@ -21,15 +20,14 @@
             <label class="full-width mdl-textfield__label" for="password">Password</label>
           </div>
           <br>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Log In</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Sign In</button>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showRegisterForm()">Don't have an account? Sign Up</button>
         </form>
 
         <!-- register form -->
         <form name="loginForm" [hidden]="!isRegistering">
           <!-- username input -->
-          <h1><strong>Welcome to Menuoso!</strong></h1>
-          <h4>Create a new account here.</h4>
+          <h4>Create a new account</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="register-username">
             <label class="mdl-textfield__label" for="register-username">Username</label>
@@ -47,7 +45,7 @@
           </div>
           <br>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="register()">Sign Up</button>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Already have an account? Log In</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Have an account? Sign In</button>
         </form>
       </div>
     </div>
