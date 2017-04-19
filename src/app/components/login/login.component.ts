@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../../services/authenticate.service';
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-login',
@@ -6,9 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class LoginComponent {
-  isRegistering: boolean;
+    isRegistering: boolean;
+    model: any = {};
 
-  constructor() {
+    constructor(
+        private authenticationService: AuthenticationService,
+        private userService: UserService) {
     this.isRegistering = false;
   }
 
@@ -21,10 +26,24 @@ export class LoginComponent {
   }
 
   login() {
-    console.log('TODO login');
+    this.authenticationService.login(this.model.username, this.model.password)
+        .subscribe(
+        data => {
+            console.log("Success");
+        },
+        error => {
+            console.log("Error");
+        });
   }
 
   register() {
-    console.log('TODO register');
+    this.userService.create(this.model)
+        .subscribe(
+        data => {
+            console.log("Success");
+        },
+        error => {
+            console.log("Error");
+        });
   }
 }

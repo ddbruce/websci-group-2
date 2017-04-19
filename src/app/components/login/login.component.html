@@ -6,17 +6,17 @@
     <div class="mdl-grid center-items">
       <div class="card-blank mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
         <!-- login form -->
-        <form name="loginForm" [hidden]="isRegistering">
+        <form name="loginForm" #userLogin = "ngForm" [hidden]="isRegistering">
           <!-- username input -->
           <h4>Sign in</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username">
+            <input class="mdl-textfield__input" [(ngModel)]="model.username" [ngModelOptions]="{standalone: true}" name="username" type="text" id="username">
             <label class="mdl-textfield__label" for="username">Username</label>
           </div>
           <br>
           <!-- password input -->
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-            <input class="full-width mdl-textfield__input" type="password" id="password">
+            <input class="full-width mdl-textfield__input" [(ngModel)]="model.password" [ngModelOptions]="{standalone: true}" password="password" type="password" id="password">
             <label class="full-width mdl-textfield__label" for="password">Password</label>
           </div>
           <br>
@@ -29,18 +29,18 @@
           <!-- username input -->
           <h4>Create a new account</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="register-username">
+            <input class="mdl-textfield__input" [(ngModel)]="model.username" [ngModelOptions]="{standalone: true}" type="text" id="register-username">
             <label class="mdl-textfield__label" for="register-username">Username</label>
           </div>
           <br>
           <!-- password input -->
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-            <input class="full-width mdl-textfield__input" type="password" id="register-password">
+            <input class="full-width mdl-textfield__input" [(ngModel)]="model.password" [ngModelOptions]="{standalone: true}" type="password" id="register-password">
             <label class="full-width mdl-textfield__label" for="register-password">Password</label>
           </div>
           <!-- password input -->
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
-            <input class="full-width mdl-textfield__input" type="password" id="confirm-password">
+            <input class="full-width mdl-textfield__input" [(ngModel)]="model.confPassword" [ngModelOptions]="{standalone: true}" type="password" id="confirm-password">
             <label class="full-width mdl-textfield__label" for="confirm-password">Confirm Password</label>
           </div>
           <br>

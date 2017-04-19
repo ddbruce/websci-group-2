@@ -3,6 +3,7 @@ var user = require("../models/user.js")
 var router = express.Router();
 
 router.post("/", function (req, res) {
+    console.log("Recieving data from angular");
     // Get parameters from the post request
     var params = req.body;
     // Find if any user matches the login credentials
