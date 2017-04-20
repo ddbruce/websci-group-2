@@ -8,11 +8,13 @@ h1 {
   font-size: 250%; }
 
 .demo-layout-transparent {
-  background: url("../assets/demos/transparent.jpg") center/cover;
+  background: url("../assets/demos/transparent.jpg") center/cover; }
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */ }
-  .demo-layout-transparent .mdl-layout__header, .demo-layout-transparent .mdl-layout__drawer-button {
-    color: white; }
+     your background is light. */
+  color: white; }
 
 .mdl-grid.center-items {
   justify-content: center; }
@@ -52,6 +54,14 @@ input:focus {
   -ms-flex-negative: 0;
   flex-shrink: 0; }
 
+.nav-ribbon {
+  width: 100%;
+  height: 56px;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
 .demo-main {
   margin-top: -25vh;
   -webkit-flex-shrink: 0;
@@ -80,3 +90,6 @@ a {
 
 a:hover {
   color: #FFF176; }
+
+.nav-logo {
+  width: 140px; }
