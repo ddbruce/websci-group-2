@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authenticate.service';
 import { UserService } from '../../services/user.service'
 import { User } from '../../_models/user';
@@ -14,7 +15,8 @@ export class LoginComponent {
 
     constructor(
         private authenticationService: AuthenticationService,
-        private userService: UserService) {
+        private userService: UserService,
+        private router: Router) {
     this.isRegistering = false;
   }
 
@@ -35,6 +37,8 @@ export class LoginComponent {
         error => {
             console.log("Error");
         });
+
+    this.router.navigateByUrl('/home');
   }
 
   register() {
