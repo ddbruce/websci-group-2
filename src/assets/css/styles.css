@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
-  font-family: Roboto, Helvetica, sans-serif !important; }
+  font-family: Roboto, Helvetica, sans-serif !important;
+  background-color:  #F5F5F5;
+;
+;
+
+}
 
 h1 {
   color: #369;
@@ -61,4 +66,12 @@ input:focus {
   text-align: center; }
 
 .ribbon-image {
-  width: 200px; }
+  width: 200px;
+  animation: logo-move 5s ease-in-out infinite;
+}
+
+@keyframes logo-move {
+	50% {
+        transform: translateY(-8px);
+    }
+}
