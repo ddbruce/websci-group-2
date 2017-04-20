@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../../services/authenticate.service';
 import { UserService } from '../../services/user.service'
+import { User } from '../../_models/user';
 
 @Component({
   selector: 'app-login',
@@ -37,10 +38,11 @@ export class LoginComponent {
   }
 
   register() {
-    this.userService.create(this.model)
+    let user:User = new User(this.model.username,this.model.password);
+    this.userService.create(user)
         .subscribe(
         data => {
-            console.log("Success");
+            console.log(data);
         },
         error => {
             console.log("Error");

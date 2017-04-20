@@ -7,4 +7,12 @@ export class User {
     company: string;
     username: string;
     password: string;
+
+    constructor(user:string, pass:string){
+        this.username = user;
+        this.password = pass;
+        this.firstName = "None";
+        this.lastName = "None";
+        this.company = "None";
+    }
 }
