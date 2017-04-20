@@ -15,9 +15,14 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service'
 import { AuthenticationService } from './services/authenticate.service';
+import { AddItemsComponent } from './components/add-items/add-items.component';
+import { Menu } from './_models/menu';
+import { Section } from './_models/section';
+import { Item } from './_models/item';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'add-items', component: AddItemsComponent }
 ];
 
 @NgModule({
@@ -25,7 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
   declarations: [
     AppComponent,
@@ -34,13 +39,16 @@ const appRoutes: Routes = [
     HomeComponent,
     MenuComponent,
     LoginComponent,
-    SignupComponent,
-    MenuBuilderComponent
+    MenuBuilderComponent,
+    AddItemsComponent
   ],
   providers: [
       MenuService,
       UserService,
-      AuthenticationService
+      AuthenticationService,
+      Menu,
+      Section,
+      Item
   ],
   bootstrap: [ AppComponent ]
 })
