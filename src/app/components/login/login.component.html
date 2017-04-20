@@ -21,7 +21,7 @@
           </div>
           <br>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Sign In</button>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showRegisterForm()">Don't have an account? Sign Up</button>
+          <a href="#" class="full-width login-link" type="button" (click)="showRegisterForm()">Don't have an account?</a>
         </form>
 
         <!-- register form -->
@@ -41,11 +41,11 @@
           <!-- password input -->
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
             <input class="full-width mdl-textfield__input" [(ngModel)]="model.confPassword" [ngModelOptions]="{standalone: true}" type="password" id="confirm-password">
-            <label class="full-width mdl-textfield__label" for="confirm-password">Confirm Password</label>
+            <label class="mdl-textfield__label" for="confirm-password">Confirm Password</label>
           </div>
           <br>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="register()">Sign Up</button>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Have an account? Sign In</button>
+          <a href="#" class="login-link" type="button"(click)="showLoginForm()">Have an account?</a>
         </form>
       </div>
     </div>

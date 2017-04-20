@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
   font-family: Roboto, Helvetica, sans-serif !important;
-  background-color:  #F5F5F5;
-;
-;
-
-}
+  background-color: #F5F5F5; }
 
 h1 {
   color: #369;
@@ -45,7 +41,8 @@ input:focus {
   padding: 30px 50px;
   border-radius: 2px;
   box-shadow: rgba(50, 50, 50, 0.0980392) 0px 0px 25px 1px;
-  background-color: white; }
+  background-color: white;
+  display: inline-block; }
 
 .demo-ribbon {
   width: 100%;
@@ -67,11 +64,19 @@ input:focus {
 
 .ribbon-image {
   width: 200px;
-  animation: logo-move 5s ease-in-out infinite;
-}
+  animation: logo-move 5s ease-in-out infinite; }
 
 @keyframes logo-move {
-	50% {
-        transform: translateY(-8px);
-    }
-}
+  50% {
+    transform: translateY(-8px); } }
+
+div .login-link {
+  text-align: center;
+  display: block;
+  margin: 25px auto 0px auto; }
+
+a {
+  color: #FF6D00; }
+
+a:hover {
+  color: #FFF176; }
