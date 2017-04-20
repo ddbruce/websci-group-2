@@ -6,7 +6,7 @@
     <div class="mdl-grid center-items">
       <div class="card-blank mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
         <!-- login form -->
-        <form name="loginForm" #userLogin = "ngForm" [hidden]="isRegistering">
+        <form name="loginForm" #userLogin = "ngForm" [hidden]="isRegistering" (submit)="login()">
           <!-- username input -->
           <h4>Sign in</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
@@ -20,12 +20,12 @@
             <label class="full-width mdl-textfield__label" for="password">Password</label>
           </div>
           <br>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="login()">Sign In</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Sign In</button>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showRegisterForm()">Don't have an account? Sign Up</button>
         </form>
 
         <!-- register form -->
-        <form name="loginForm" [hidden]="!isRegistering">
+        <form name="registerForm" [hidden]="!isRegistering" (submit)="register()">
           <!-- username input -->
           <h4>Create a new account</h4>
           <div class="mdl-textfield-login mdl-js-textfield mdl-textfield--floating-label">
@@ -44,7 +44,7 @@
             <label class="full-width mdl-textfield__label" for="confirm-password">Confirm Password</label>
           </div>
           <br>
-          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="register()">Sign Up</button>
+          <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Sign Up</button>
           <button class="full-width mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" (click)="showLoginForm()">Have an account? Sign In</button>
         </form>
       </div>
