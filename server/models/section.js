@@ -13,6 +13,10 @@ var sectionSchema = new Schema({
     type: String,
     required: true
   },
+  length: Number,
+  width: Number,
+  x: Number,
+  y: Number,
   items: Array
 });
 
