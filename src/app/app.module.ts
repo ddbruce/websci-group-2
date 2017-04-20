@@ -21,6 +21,7 @@ import { Section } from './_models/section';
 import { Item } from './_models/item';
 
 const appRoutes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'add-items', component: AddItemsComponent }
 ];
