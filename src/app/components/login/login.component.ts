@@ -38,7 +38,7 @@ export class LoginComponent {
             console.log("Error");
         });
 
-    this.router.navigateByUrl('/home');
+    this.router.navigate(['/home'], { skipLocationChange: true });
   }
 
   register() {

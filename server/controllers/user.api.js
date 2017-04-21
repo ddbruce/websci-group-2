@@ -1,6 +1,8 @@
 const express = require("express");
 var user = require("../models/user.js");
+var menu = require("../models/menu.js");
 var router = express.Router();
+const mongoose = require("mongoose");
 
 router.get("/", function (req, res) {
     user.find({}, function (err, data) {
@@ -60,6 +62,39 @@ router.get("/", function (req, res) {
         }
         res.send("deleted");
     });
+}).get("/user-menus/:id", function (req, res) {
+  var id = req.params.id;
+  var _user = user.findOne({
+    _id: id
+  }, function (err) {
+    if (err) {
+        res.send("error");
+        return;
+    }
+  })
+    .lean();
+
+  _user.exec(function (err, docs) {
+    var menuIds = docs.menus.map(function (menuId) {
+      return mongoose.Types.ObjectId(menuId);
+    });
+
+    var menus = menu.find({
+      _id: {
+        "$in": menuIds
+      }
+    }, function (err) {
+      if (err) {
+          res.send("error");
+          return;
+      }
+    })
+      .lean();
+
+    menus.exec(function (err, docs) {
+      res.send(docs);
+    });
+  });
 });
 
 module.exports = router;

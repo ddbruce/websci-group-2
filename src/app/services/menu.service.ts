@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { Menu } from '../_models/menu';
+
+// Statics
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class MenuService {
+  private baseUrl = '/api/';
   menus: Array<Menu>;
 
-  getMenus(): Menu[] {
-    // TODO make db call using API endpoint to get menus associated with current user
-    return this.menus;
+  constructor(private http: Http) {
+    console.log('Created MenuService');
+  }
+
+  getUserMenus(): Promise<Menu[]> {
+    let currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;
+    console.log('currentUserId:', currentUserId);
+
+    return this.http.get(this.baseUrl + 'user/user-menus/' + currentUserId)
+      .toPromise()
+      .then(response => response.json() as Menu[]);
   }
 }

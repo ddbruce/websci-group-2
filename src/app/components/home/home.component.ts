@@ -13,13 +13,15 @@ export class HomeComponent {
   menus: Array<Menu>;
   newMenuDialog: any;
   domElement: any;
-  menuService: any;
 
-  constructor(private _menuService: MenuService, element: ElementRef, private router: Router) {
+  constructor(private menuService: MenuService, element: ElementRef, private router: Router) {
     this.title = 'Your Menus';
     this.menus = [];
     this.domElement = element;
-    this.menuService = _menuService;
+
+    this.menuService.getUserMenus().then(data => {
+      this.menus = data;
+    });
   }
 
   ngAfterContentInit(): void {
@@ -27,9 +29,10 @@ export class HomeComponent {
   }
 
   createNewMenu() {
-    // menuService.newMenu()
     console.log('TODO grab form info');
+    // menuService.newMenu()
     this.newMenuDialog.close();
-    this.router.navigateByUrl('/add-items');
+    // this.router.navigateByUrl('/add-items');
+    this.menuService.getUserMenus();
   }
 }
