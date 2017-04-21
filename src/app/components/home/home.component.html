@@ -24,7 +24,7 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <div mdl>
+    <div>
       <h2>{{ title }}</h2>
 
       <button (click)="newMenuDialog.showModal()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">New Menu</button>
@@ -33,13 +33,7 @@
         You don't have any menus yet!
       </div>
 
-      <div *ngFor="let menu of menus">
-        <h3>{{ menu.name }}</h3>
-
-        <button [disabled]="!menu.isLive">Go Live</button>
-      </div>
-
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp" *ngIf="menus.length == 0">
+      <div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp" mdl>
         <div class="mdl-card__title">
           <h3 class="mdl-card__title-text">{{ menu.name }}</h3>
         </div>
@@ -48,13 +42,16 @@
           Mauris sagittis pellentesque lacus eleifend lacinia...
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Get Started
-          </a>
+          </button>
+          <button [disabled]="!menu.isLive" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Go Live
+          </button>
         </div>
         <div class="mdl-card__menu">
           <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">mode-edit</i>
+            <i class="material-icons">mode_edit</i>
           </button>
         </div>
       </div>

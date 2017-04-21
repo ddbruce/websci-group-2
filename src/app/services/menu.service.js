@@ -9,16 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+// Statics
+require('rxjs/add/operator/toPromise');
 var MenuService = (function () {
-    function MenuService() {
+    function MenuService(http) {
+        this.http = http;
+        this.baseUrl = '/api/';
+        console.log('Created MenuService');
     }
-    MenuService.prototype.getMenus = function () {
-        // TODO make db call using API endpoint to get menus associated with current user
-        return this.menus;
+    MenuService.prototype.getUserMenus = function () {
+        var currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;
+        console.log('currentUserId:', currentUserId);
+        return this.http.get(this.baseUrl + 'user/user-menus/' + currentUserId)
+            .toPromise()
+            .then(function (response) { return response.json(); });
     };
     MenuService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], MenuService);
     return MenuService;
 }());
