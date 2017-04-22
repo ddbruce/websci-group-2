@@ -23,7 +23,8 @@ import { Item } from './_models/item';
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'add-items', component: AddItemsComponent }
+  { path: 'add-items', component: AddItemsComponent },
+  { path: 'menu-builder', component: MenuBuilderComponent }
 ];
 
 @NgModule({

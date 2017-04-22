@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Menu } from '../../_models/menu';
 import { Section } from '../../_models/section';
 import { Item } from '../../_models/item';
 import { MenuService } from '../../services/menu.service';
+declare var jQuery: any;
 
 @Component({
   selector: 'menu-builder',
@@ -11,9 +12,21 @@ import { MenuService } from '../../services/menu.service';
 
 export class MenuBuilderComponent {
   title: string;
+  @ViewChild('grid') el: ElementRef;
+  constructor(menu: Menu, elementRef: ElementRef) {
+      this.title = 'Menu Builder';
+  }
 
-  constructor(menu: Menu) {
-    this.title = 'Menu Builder';
+  //Initializing Menu-builder
+  ngOnInit() {
+      var menuBuilder = jQuery(this.el.nativeElement).packery({
+          // options
+          itemSelector: '.grid-item',
+          gutter: 10
+      });
+
+      var items = menuBuilder.find('.grid-item').draggable();
+      menuBuilder.packery('bindUIDraggableEvents', items);
   }
 
   saveMenu() {

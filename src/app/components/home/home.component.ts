@@ -32,7 +32,7 @@ export class HomeComponent {
     console.log('TODO grab form info');
     // menuService.newMenu()
     this.newMenuDialog.close();
-    // this.router.navigateByUrl('/add-items');
+    this.router.navigateByUrl('/menu-builder');
     this.menuService.getUserMenus();
   }
 }
