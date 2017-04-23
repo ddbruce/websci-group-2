@@ -22,6 +22,13 @@ export class MenuBuilderComponent {
       menuBuilderFunctionality.init();
   }
 
+  addSection(){
+      menuBuilderFunctionality.addSection();
+  }
+
+  addSpacer(){
+    menuBuilderFunctionality.addSpacer();
+  }
   saveMenu() {
     // TODO method stub
   }
