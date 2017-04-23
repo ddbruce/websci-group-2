@@ -14,7 +14,6 @@ export class MenuBuilderComponent {
   title: string;
   @ViewChild('grid') el: ElementRef;
   constructor(menu: Menu, elementRef: ElementRef) {
-      this.title = 'Menu Builder';
   }
 
   //Initializing Menu-builder

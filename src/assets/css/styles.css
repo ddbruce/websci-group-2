@@ -94,18 +94,7 @@ a:hover {
 .nav-logo {
   width: 140px; }
 
-.grid {
-    width: 100%;
-    height: 50%;
-    background-color: grey;
-}
-
-.grid-item {
-    width: 25%;
-    background-color: blue;
-}
-
-.grid-item--width2 {
-    width: 50%;
-    background-color: blue;
-}
+#menu-builder {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 2%; }
