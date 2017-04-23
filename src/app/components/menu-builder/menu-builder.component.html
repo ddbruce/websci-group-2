@@ -19,23 +19,17 @@
         <div id="main-content">
             <div id="menu-builder">
                 <div #grid class="packery">
-                    <div class="item w4 h2"></div>
-                    <div class="item w2 h2"></div>
-                    <div class="item w2 h4"></div>
-                    <div class="item w2 h2"></div>
-                    <div class="item w4 h4"></div>
-                    <div class="item w2 h2"></div>
-                    <div class="item w2 h4"></div>
-                    <div class="item w4 h4"></div>
-                    <div class="item w2 h2"></div>
-                    <div class="item w2 h2"></div>
+                    <div class="item"></div>
                 </div>
 </div>
             <div id="menu-settings">
                 <button (click)="addSection()">Add Section</button>
+                <button (click)="addSpacer()">Add Spacer</button>
+                <button (click)="saveMenu()">Save Menu</button>
             </div>
         </div>
-
-        <button (click)="saveMenu()">Save Menu</button>
     </main>
+    <ul class='custom-menu'>
+        <li (click)=editItems()>Edit Items</li>
+    </ul>
 </div>
