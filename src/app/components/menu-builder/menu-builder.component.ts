@@ -4,6 +4,7 @@ import { Section } from '../../_models/section';
 import { Item } from '../../_models/item';
 import { MenuService } from '../../services/menu.service';
 declare var jQuery: any;
+declare var menuBuilderFunctionality: any;
 
 @Component({
   selector: 'menu-builder',
@@ -13,19 +14,12 @@ declare var jQuery: any;
 export class MenuBuilderComponent {
   title: string;
   @ViewChild('grid') el: ElementRef;
-  constructor(menu: Menu, elementRef: ElementRef) {
+  constructor(menu: Menu, elementRef: ElementRef, ) {
   }
 
   //Initializing Menu-builder
   ngOnInit() {
-      var menuBuilder = jQuery(this.el.nativeElement).packery({
-          // options
-          itemSelector: '.grid-item',
-          gutter: 10
-      });
-
-      var items = menuBuilder.find('.grid-item').draggable();
-      menuBuilder.packery('bindUIDraggableEvents', items);
+      menuBuilderFunctionality.init();
   }
 
   saveMenu() {

@@ -117,8 +117,25 @@ a:hover {
   width: 140px;
 }
 
-#menu-builder {
-    width: 60%;
-    margin-left:20%;
+#main-content {
+    width: 100%;
+    margin-left:5%;
     margin-top:2%;
+    display:block;
+    background-color:grey;
+}
+
+#menu-builder {
+    width: 1080px;
+    height: 607.5px;
+    display: inline-block;
+    background-color:bisque;
+    float:left;
+}
+
+#menu-settings {
+    width: 10%;
+    height: 607.5px;
+    display: inline-block;
+    background-color: firebrick;
 }

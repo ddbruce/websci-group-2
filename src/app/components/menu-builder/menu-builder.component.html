@@ -1,25 +1,41 @@
-<header class="mdl-layout__header">
-    <link rel="stylesheet" href="../../../assets/css/menu-test.css">
-    <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title"><img class="nav-logo" src="../../../assets/menuoso_logo_white.png"></span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
-    </div>
-</header>
-<div id="menu-builder">
-    <div #grid class="grid">
-        <div class="grid-item">t</div>
-        <div class="grid-item grid-item--width2">t</div>
-        <div class="grid-item">t</div>
-    </div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <link rel="stylesheet" href="../../../assets/css/menu-test.css">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title"><img class="nav-logo" src="../../../assets/menuoso_logo_white.png"></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <div id="main-content">
+            <div id="menu-builder">
+                <div #grid class="packery">
+                    <div class="item w4 h2"></div>
+                    <div class="item w2 h2"></div>
+                    <div class="item w2 h4"></div>
+                    <div class="item w2 h2"></div>
+                    <div class="item w4 h4"></div>
+                    <div class="item w2 h2"></div>
+                    <div class="item w2 h4"></div>
+                    <div class="item w4 h4"></div>
+                    <div class="item w2 h2"></div>
+                    <div class="item w2 h2"></div>
+                </div>
 </div>
+            <div id="menu-settings">
+                <button (click)="addSection()">Add Section</button>
+            </div>
+        </div>
 
-<button (click)="saveMenu()">Save Menu</button>
+        <button (click)="saveMenu()">Save Menu</button>
+    </main>
+</div>
