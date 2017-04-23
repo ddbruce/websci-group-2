@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { MenuService } from './services/menu.service';
 import { MDL } from './directives/MaterialDesignLiteUpgradeElement';
-import { HeaderComponent } from './components/header/header.component';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -37,7 +36,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MDL,
-    HeaderComponent,
     HomeComponent,
     MenuComponent,
     LoginComponent,
