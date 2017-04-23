@@ -36,7 +36,7 @@ export class LoginComponent {
             this.router.navigate(['/home'], { skipLocationChange: true });
         },
         error => {
-            console.log("Error");
+            console.log("ERROR:", error);
         });
   }
 
