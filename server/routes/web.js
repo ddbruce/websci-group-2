@@ -7,7 +7,7 @@ var absPath = path.join(__dirname, "../../src");
 //route to handle home page
 router.get("/", function(req, res, next) {
     res.sendFile(absPath + "/index.html");
-}).use((req, res, next) => {
+})/*.use((req, res, next) => { // TODO make this not break the backend
   // Catch 404s
   res.status = 404;
 
@@ -26,6 +26,6 @@ router.get("/", function(req, res, next) {
   }
 
   res.type('txt').send('Not found');
-});;
+})*/;
 
 module.exports = router;
