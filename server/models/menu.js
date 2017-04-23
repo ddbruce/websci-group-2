@@ -14,6 +14,7 @@ var menuSchema = new Schema({
     required: true
   },
   description: String,
+  css: String,
   sections: Array
 });
 
