@@ -1,5 +1,35 @@
-<div mdl>
-  <!-- Note: you must add the 'mdl' directive to every component template -->
-  <!-- <app-header></app-header> -->
-  <router-outlet></router-outlet>
+<!-- Always shows a header, even in smaller screens. -->
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header [hidden]="!isLoggedIn()" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">
+        <a><img class="logo" src="assets/menuoso_logo_white.png"></a>
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div [hidden]="!isLoggedIn()" class="mdl-layout__drawer">
+    <span class="mdl-layout-title">
+      <a href="#"><img class="logo" src="assets/menuoso_logo.png"></a>
+    </span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  
+  <main class="mdl-layout__content">
+    <router-outlet></router-outlet>
+  </main>
 </div>
