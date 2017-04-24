@@ -6,12 +6,10 @@ var express = require('express')
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const fs = require("fs");
 const routes = require("./routes/web"); // web routes
 const apiRoutes = require("./routes/api"); // api routes
 const connection = require("./config/db"); // mongodb connection
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
-
 
 const port = 3000;
 
@@ -32,6 +30,30 @@ app.use('/node_modules', express.static(path.join(__dirname, '../node_modules'))
 app.use("/", routes);
 app.use("/api", apiRoutes);
 
+// Error handling at then end of the middleware stack or it won't work
+app.use(function(req, res) {
+  res.status(404);
+
+  if (req.accepts('html')) {
+    res.sendFile(path.join(__dirname, '../src', "/404.html"));
+    return;
+  }
+  if (req.accepts('json')) {
+    res.send({
+        error: 'Not found'
+    });
+    return;
+  }
+
+  res.type('txt').send('Not found');
+});
+
+const server = app.listen(port, () => {
+	console.log('Menuoso server listening on port ' + port);
+});
+
+const io = require('socket.io').listen(server);
+
 //Socket handlers
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -43,8 +65,11 @@ io.on('connection', function(socket){
   socket.on("login",function(data){
     console.log('Logging in with: '+data);
   });
-});
 
-app.listen(port, () => {
-	console.log('Menuoso server listening on port ' + port);
+  // Handler for creating the css of a menu
+  socket.on("create-css", function(menuName, css){
+    fs.writeFile(`../src/assets/css/${menuName}-styles.css`, css, function(err) {
+      if (err) throw err;
+    });
+  });
 });

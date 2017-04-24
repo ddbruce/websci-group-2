@@ -150,6 +150,7 @@ a:hover {
     background: #FFF;
     color: #333;
     border-radius: 5px;
+    list-style-type: none;
 }
 
 .custom-menu li {
@@ -186,4 +187,13 @@ a:hover {
 
 .header-title {
   color: #424242;
+}
+
+.item {
+    width: 179.5px;
+    height: 179.5px;
+    float: left;
+    background: #C09;
+    border: 1px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.3);
 }

@@ -1,16 +1,30 @@
-<link rel="stylesheet" href="../../../assets/css/menu-test.css">
-<div id="main-content">
-    <div id="menu-builder">
-        <div #grid class="packery">
-            <div class="item"></div>
+<<<<<<< HEAD
+<main class="mdl-layout__content">        
+    <link rel="stylesheet" href="../../../assets/css/menu-test-sass.css">
+    <div id="main-content">
+        <div id="menu-builder">
+            <div #grid class="packery">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+        <div id="menu-settings">
+            <button (click)="addSection()">Add Section</button>
+            <button (click)="addSpacer()">Add Spacer</button>
+            <button (click)="saveMenu()">Save Menu</button>
         </div>
     </div>
-    <div id="menu-settings">
-        <button (click)="addSection()">Add Section</button>
-        <button (click)="addSpacer()">Add Spacer</button>
-        <button (click)="saveMenu()">Save Menu</button>
-    </div>
-</div>
+</main>
 <ul class='custom-menu'>
     <li (click)=editItems()>Edit Items</li>
 </ul>

@@ -11,7 +11,7 @@ import { AuthenticationService } from './services/authenticate.service';
 export class AppComponent  {
   name = 'Menuoso';
   domElement: any;
-
+  
   constructor(private menuService: MenuService,
     private authenticationService: AuthenticationService,
     private router: Router,

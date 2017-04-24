@@ -13,6 +13,8 @@ var menuSchema = new Schema({
     type: String,
     required: true
   },
+  description: String,
+  css: String,
   sections: Array
 });
 

@@ -133,6 +133,7 @@ a:hover {
 .custom-menu li:hover {
   background-color: #DEF; }
 
+<<<<<<< HEAD
 .newMenu {
   border-radius: 7px;
   border-style: dashed;
@@ -151,3 +152,12 @@ a:hover {
 
 .header-title {
   color: #424242; }
+=======
+.item {
+  width: 179.5px;
+  height: 179.5px;
+  float: left;
+  background: #C09;
+  border: 1px solid #333;
+  border-color: rgba(0, 0, 0, 0.3); }
+>>>>>>> f1b5f9f92ce0e7870de46504031414ae0589d8e3
