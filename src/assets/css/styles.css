@@ -157,7 +157,7 @@ a:hover {
   width: 179.5px;
   height: 179.5px;
   float: left;
-  background: #C09;
+  background-color: white;
   border: 1px solid #333;
   border-color: rgba(0, 0, 0, 0.3); }
 
@@ -181,3 +181,13 @@ a:hover {
 
 #currSection {
   display: none; }
+
+.menuBuilderTitle {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 200%; }
+
+.menuBuilderItem {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 50%; }

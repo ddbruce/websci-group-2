@@ -6,7 +6,7 @@ var $spacerCount = 0;
 //Goes through each item found in the menu and binds right-click event and draggability
 function makeEachClickable(i, itemElem){
     $(itemElem).bind("contextmenu", function (event) {
-        console.log(itemElem);
+        $("#currSection").val(itemElem.attr('id'));
         // Avoid the real one
         event.preventDefault();
 
@@ -50,8 +50,8 @@ function initPackery(){
 
 function addItem(newSectionName,newSection){
     $(function () {
-        if(newSectionName.length>0){
-            var item = $("<div class='item' id='"+newSectionName+"'></div>");
+        if(newSectionName.length>0&&newSection){
+            var item = $("<div class='item menuBuilderTitle' id='"+newSectionName+"'>"+newSectionName+"</div>");
         }
         else{
             var item = $("<div class='item' id='spacer"+$spacerCount+"'></div>");
@@ -101,6 +101,12 @@ var menuBuilderFunctionality = (function () {
         editItems: function () {
             $(function () {
                 editItems();
+            });
+        },
+        addItem: function (newItemName) {
+            $(function () {
+                var currSec = '#'+$('#currSection').val();
+                $(currSec).append("<p class='menuBuilderItem'>" + newItemName + "</p>");
             });
         }
     }

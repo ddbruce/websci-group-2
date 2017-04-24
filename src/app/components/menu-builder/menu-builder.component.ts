@@ -80,7 +80,6 @@ export class MenuBuilderComponent {
 
   // This saves the order of the items in a section, as dictated by sortable and the user
   saveItems() {
-    // TODO
     this.editItemsDialog.close();
   }
 
@@ -88,6 +87,7 @@ export class MenuBuilderComponent {
   saveItem() {
     let item: Item = new Item({name:this.model.newItemName,price:this.model.newItemPrice,description:this.model.newItemDesc,isVegetarian:this.model.isVeget,isVegan:this.model.isVegan,isGlutenFree:this.model.isGF,calories:this.model.newItemCal});
     this.menuService.newItem(item);
+    menuBuilderFunctionality.addItem(this.model.newItemName,this.model.currSection);
     this.addItemDialog.close();
   }
 
