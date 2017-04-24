@@ -1,5 +1,6 @@
 <main class="mdl-layout__content">        
     <link rel="stylesheet" href="../../../assets/css/menu-test-sass.css">
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
     <div id="main-content">
         <div id="menu-builder">
             <div #grid class="packery">
@@ -27,3 +28,62 @@
 <ul class='custom-menu'>
     <li (click)=editItems()>Edit Items</li>
 </ul>
+<dialog id="edit-items-dialog" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Edit Items</h3>
+    <div class="mdl-dialog__content">
+        <ul id="items">
+
+        </ul>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button (click)="editItemsDialog.close()" type="button" class="mdl-button">Cancel</button>
+        <button (click)="saveItems()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Save</button>
+        <button (click)="addItem()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Add Item</button>
+    </div>
+</dialog>
+
+<dialog id="add-item-dialog" class="mdl mdl-dialog">
+ <h3 class="mdl-dialog__title">Add Item</h3>
+ <div class="mdl-dialog__content">
+   <!-- item name input -->
+   <form action="#">
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="text" id="new-item-name">
+       <label class="mdl-textfield__label" for="new-menu-name">Item name</label>
+     </div>
+     <!-- item price input -->
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-price">
+       <label class="mdl-textfield__label" for="new-menu-description">Price</label>
+     </div>
+     <!-- item calorie input -->
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-cal">
+       <label class="mdl-textfield__label" for="new-menu-description">Calories</label>
+     </div>
+     <!-- item description input -->
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-desc">
+       <label class="mdl-textfield__label" for="new-menu-description">Description</label>
+     </div>
+     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <span class="mdl-checkbox__label">Vegetarian</span>
+     </label>
+     <br>
+     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <span class="mdl-checkbox__label">Vegan</span>
+     </label>
+     <br>
+     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <span class="mdl-checkbox__label">Gluten-Free</span>
+     </label>
+   </form>
+ </div>
+ <div class="mdl-dialog__actions">
+   <button (click)="addItemDialog.close()" type="button" class="mdl-button">Cancel</button>
+   <button (click)="saveItem()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Continue</button>
+ </div>
+</dialog>

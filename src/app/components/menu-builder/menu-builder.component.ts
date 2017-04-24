@@ -15,11 +15,16 @@ declare var menuBuilderFunctionality: any;
 
 export class MenuBuilderComponent {
   title: string;
+  domElement: any;
+  editItemsDialog: any;
+  addItemDialog: any;
+  @ViewChild('grid') el: ElementRef;
   name: string;
   desc: string;
   private sub: any;
   socket = io('http://localhost:3000');
   constructor(elementRef: ElementRef,private route: ActivatedRoute ) {
+    this.domElement = elementRef;
   }
 
   //Initializing Menu-builder
@@ -33,6 +38,11 @@ export class MenuBuilderComponent {
       });
   }
 
+  ngAfterContentInit(): void {
+    this.editItemsDialog = this.domElement.nativeElement.querySelector('#edit-items-dialog');
+    this.addItemDialog = this.domElement.nativeElement.querySelector('#add-item-dialog');
+  }
+
   addSection(){
       menuBuilderFunctionality.addSection();
   }
@@ -44,5 +54,27 @@ export class MenuBuilderComponent {
     this.socket.emit('create-css', this.name);
     console.log("Sent "+this.name+this.desc);
   }
+
+  editItems() {
+    this.editItemsDialog.showModal();
+    menuBuilderFunctionality.editItems();
+  }
+
+  addItem() {
+    this.addItemDialog.showModal();
+  }
+
+  // This saves the order of the items in a section, as dictated by sortable and the user
+  saveItems() {
+    // TODO
+    this.editItemsDialog.close();
+  }
+
+  // This saves the info from the Add Item form
+  saveItem() {
+    // TODO
+    this.addItemDialog.close();
+  }
+
   // TODO implement drag-and-drop functionality
 }
