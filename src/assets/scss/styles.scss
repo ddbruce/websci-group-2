@@ -246,3 +246,9 @@ a:hover {
     margin-top:6px;
     font-size:50%;
 }
+
+.mdl-data-table {
+  td:first-child {
+    text-align: left;
+  }
+}
