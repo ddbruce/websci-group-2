@@ -1,5 +1,7 @@
 const express = require("express");
+const mongoose = require("mongoose");
 var menu = require("../models/menu.js");
+var section = require("../models/section.js");
 var router = express.Router();
 
 router.get("/", function (req, res) {
@@ -60,6 +62,39 @@ router.get("/", function (req, res) {
         }
         res.send("deleted");
     });
+}).get("/menu-sections/:id", function (req, res) {
+  var id = req.params.id;
+  var _menu = menu.findOne({
+    _id: id
+  }, function (err) {
+    if (err) {
+        res.send("error");
+        return;
+    }
+  })
+    .lean();
+
+  _menu.exec(function (err, docs) {
+    var sectionIds = docs.sections.map(function (sectionId) {
+      return mongoose.Types.ObjectId(sectionId);
+    });
+
+    var sections = section.find({
+      _id: {
+        "$in": sectionIds
+      }
+    }, function (err) {
+      if (err) {
+          res.send("error");
+          return;
+      }
+    })
+      .lean();
+
+    sections.exec(function (err, docs) {
+      res.send(docs);
+    });
+  });
 });
 
 module.exports = router;

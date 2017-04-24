@@ -1,8 +1,8 @@
 const express = require("express");
+const mongoose = require("mongoose");
 var user = require("../models/user.js");
 var menu = require("../models/menu.js");
 var router = express.Router();
-const mongoose = require("mongoose");
 
 router.get("/", function (req, res) {
     user.find({}, function (err, data) {

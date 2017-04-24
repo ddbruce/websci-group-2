@@ -5,5 +5,5 @@ import { Item } from './item';
 export class Section {
   _id: string;
   name: string;
-  items: Array<Item>;
+  items: Array<string>;
 }

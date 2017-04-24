@@ -21,6 +21,7 @@ export class HomeComponent {
 
     this.menuService.getUserMenus().then(data => {
       this.menus = data;
+      console.log('this.menus:', this.menus);
     });
   }
 
