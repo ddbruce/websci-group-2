@@ -9,4 +9,13 @@ export class Item {
   isVegan: boolean;
   isGlutenFree: boolean;
   calories: number;
+  constructor(arg?: any) {
+      this.name = arg && arg.name;
+      this.price = arg && arg.name;
+      this.description = arg && arg.desc;
+      this.isVegetarian = arg && arg.name;
+      this.isVegan = arg && arg.name;
+      this.isGlutenFree = arg && arg.name;
+      this.calories = arg && arg.name;
+  }
 }

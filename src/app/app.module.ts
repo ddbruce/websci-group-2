@@ -48,8 +48,7 @@ const appRoutes: Routes = [
       MenuService,
       UserService,
       AuthenticationService,
-      Section,
-      Item
+      Section
   ],
   bootstrap: [ AppComponent ]
 })

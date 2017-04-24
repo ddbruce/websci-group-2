@@ -14,6 +14,7 @@ declare var menuBuilderFunctionality: any;
 })
 
 export class MenuBuilderComponent {
+  //init
   title: string;
   domElement: any;
   editItemsDialog: any;
@@ -23,6 +24,8 @@ export class MenuBuilderComponent {
   desc: string;
   private sub: any;
   socket = io('http://localhost:3000');
+  model: any = {};
+
   constructor(elementRef: ElementRef,private route: ActivatedRoute ) {
     this.domElement = elementRef;
   }
@@ -76,7 +79,8 @@ export class MenuBuilderComponent {
 
   // This saves the info from the Add Item form
   saveItem() {
-    // TODO
+    let item: Item = new Item({name:this.model.newItemName,price:this.model.newItemPrice,description:this.model.newItemDesc,isVegetarian:this.model.isVeget,isVegan:this.model.isVegan,isGlutenFree:this.model.isGF,calories:this.model.newItemCal});
+    console.log("Here:" + item);
     this.addItemDialog.close();
   }
 

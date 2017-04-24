@@ -19,6 +19,7 @@ var MenuService = (function () {
         this.baseUrl = '/api/';
         this.menus = [];
     }
+    //Menu service handlers for menu-builder component
     MenuService.prototype.newMenu = function (menu) {
         console.log(menu);
         this.menus.push(menu);

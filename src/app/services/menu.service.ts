@@ -10,16 +10,21 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MenuService {
-  private baseUrl = '/api/';
+    private baseUrl = '/api/';
+    menus: Array<Menu>;
+    items: Array<Item>;
 
   constructor(private http: Http) {
     this.menus = [];
   }
 
+  //Menu service handlers for menu-builder component
   newMenu(menu:Menu){
     console.log(menu);
     this.menus.push(menu);
   }
+
+  
 
   getUserMenus(): Promise<Menu[]> {
     let currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;

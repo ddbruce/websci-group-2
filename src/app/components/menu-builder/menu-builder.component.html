@@ -48,36 +48,36 @@
    <!-- item name input -->
    <form action="#">
      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-       <input class="mdl-textfield__input" type="text" id="new-item-name">
+       <input class="mdl-textfield__input" type="text" [(ngModel)]="model.newItemName" [ngModelOptions]="{standalone: true}" name="newItemName" id="new-item-name">
        <label class="mdl-textfield__label" for="new-menu-name">Item name</label>
      </div>
      <!-- item price input -->
      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-price">
+       <input class="mdl-textfield__input" type="text" [(ngModel)]="model.newItemPrice" [ngModelOptions]="{standalone: true}" name="newItemPrice" rows="3" id="new-item-price">
        <label class="mdl-textfield__label" for="new-menu-description">Price</label>
      </div>
      <!-- item calorie input -->
      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-cal">
+       <input class="mdl-textfield__input" type="text" [(ngModel)]="model.newItemCal" [ngModelOptions]="{standalone: true}" name="newItemCal" rows="3" id="new-item-cal">
        <label class="mdl-textfield__label" for="new-menu-description">Calories</label>
      </div>
      <!-- item description input -->
      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-       <input class="mdl-textfield__input" type="text" rows="3" id="new-item-desc">
+       <input class="mdl-textfield__input" type="text" [(ngModel)]="model.newItemDesc" [ngModelOptions]="{standalone: true}" name="newItemDesc" rows="3" id="new-item-desc">
        <label class="mdl-textfield__label" for="new-menu-description">Description</label>
      </div>
      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <input type="checkbox" id="checkbox-2" [(ngModel)]="model.isVeget" [ngModelOptions]="{standalone: true}" name="isVeget" class="mdl-checkbox__input">
        <span class="mdl-checkbox__label">Vegetarian</span>
      </label>
      <br>
      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <input type="checkbox" id="checkbox-2" [(ngModel)]="model.isVegan" [ngModelOptions]="{standalone: true}" name="isVegan" class="mdl-checkbox__input">
        <span class="mdl-checkbox__label">Vegan</span>
      </label>
      <br>
      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-       <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+       <input type="checkbox" id="checkbox-2" [(ngModel)]="model.isGF" [ngModelOptions]="{standalone: true}" name="isGF" class="mdl-checkbox__input">
        <span class="mdl-checkbox__label">Gluten-Free</span>
      </label>
    </form>
@@ -87,3 +87,4 @@
    <button (click)="saveItem()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Continue</button>
  </div>
 </dialog>
+<input type="text" id="currSection" [(ngModel)]="model.currSection" [ngModelOptions]="{standalone: true}" name="currSection" />
