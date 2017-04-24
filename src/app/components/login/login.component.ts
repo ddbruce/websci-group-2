@@ -33,7 +33,7 @@ export class LoginComponent {
         .subscribe(
         data => {
             console.log("Success");
-            this.router.navigate(['/home'], { skipLocationChange: true });
+            this.router.navigate(['/home']);
         },
         error => {
             console.log("ERROR:", error);
