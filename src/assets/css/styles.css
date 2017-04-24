@@ -7,6 +7,14 @@ h1 {
   color: #369;
   font-size: 250%; }
 
+#page-not-found-icon {
+  color: #fff;
+  font-size: 60vh;
+  margin-bottom: 0; }
+
+#message-404 {
+  margin-top: 0; }
+
 .demo-layout-transparent {
   background: url("../assets/demos/transparent.jpg") center/cover; }
 
@@ -165,7 +173,6 @@ a:hover {
   text-align: center; }
 
 .error-page {
-  margin-top: 200px !important;
   background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
   color: white;
   text-align: center; }
@@ -178,8 +185,6 @@ a:hover {
 
 .center-button {
   text-align: center; }
-<<<<<<< HEAD
-=======
 
 #currSection {
   display: none; }
@@ -193,4 +198,3 @@ a:hover {
   text-align: center;
   margin-top: 6px;
   font-size: 50%; }
->>>>>>> 7ddbe48e6112e8a7cbe85c90b18e596cd3bc883d
