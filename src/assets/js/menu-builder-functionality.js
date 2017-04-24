@@ -70,6 +70,10 @@ function addItem(newSection){
     });
 }
 
+function editItems(){
+    $("#items").sortable();
+}
+
 //Javascript object imported by Angular to call functions init, addSection, etc.
 var menuBuilderFunctionality = (function () {
     return {
@@ -87,6 +91,11 @@ var menuBuilderFunctionality = (function () {
         addSpacer: function(){
             $(function(){
                 addItem(false);
+            })
+        },
+        editItems: function(){
+            $(function(){
+                editItems();
             })
         }
     }

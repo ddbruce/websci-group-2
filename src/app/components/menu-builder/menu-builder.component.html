@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <main class="mdl-layout__content">        
     <link rel="stylesheet" href="../../../assets/css/menu-test-sass.css">
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
     <div id="main-content">
         <div id="menu-builder">
             <div #grid class="packery">
@@ -28,3 +29,27 @@
 <ul class='custom-menu'>
     <li (click)=editItems()>Edit Items</li>
 </ul>
+<dialog id="edit-items-dialog" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Edit Items</h3>
+    <div class="mdl-dialog__content">
+        <ul id="items">
+
+        </ul>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button (click)="editItemsDialog.close()" type="button" class="mdl-button">Cancel</button>
+        <button (click)="saveItems()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Save</button>
+        <button (click)="addItem()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Add Item</button>
+    </div>
+</dialog>
+
+<dialog id="add-item-dialog" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Add Item</h3>
+    <div class="mdl-dialog__content">
+        Add Item Form
+    </div>
+    <div class="mdl-dialog__actions">
+        <button (click)="addItemDialog.close()" type="button" class="mdl-button">Cancel</button>
+        <button (click)="saveItem()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Save</button>
+    </div>
+</dialog>
