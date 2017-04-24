@@ -3,7 +3,7 @@
 import { Item } from './item';
 
 export class Section {
-  id: number;
+  _id: string;
   name: string;
   items: Array<Item>;
 }

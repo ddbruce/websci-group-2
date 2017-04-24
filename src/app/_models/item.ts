@@ -1,7 +1,7 @@
 // Item class definition, derived from Mongo backend schema
 
 export class Item {
-  id: number;
+  _id: string;
   name: string;
   price: number;
   description: string;
