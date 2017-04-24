@@ -160,3 +160,30 @@ a:hover {
 .custom-menu li:hover {
     background-color: #DEF;
 }
+
+.home-grid {
+}
+
+.newMenu {
+  border-radius: 7px;
+  border-style: dashed;
+  padding: 0 auto !important;
+  border-color: #E0E0E0;
+}
+
+.newMenu:hover {
+  background-color: #E0E0E0;
+}
+
+
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  text-align: center;
+}
+
+.header-title {
+  color: #424242;
+}
