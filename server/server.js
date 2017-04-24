@@ -68,7 +68,7 @@ io.on('connection', function(socket){
 
   // Handler for creating the css of a menu
   socket.on("create-css", function(menuName, css){
-    fs.writeFile(`../src/assets/css/${menuName}-styles.css`, css, function(err) {
+    fs.writeFile(path.join(__dirname, `../src/assets/css/${menuName}-styles.css`), css, function(err) {
       if (err) throw err;
     });
   });
