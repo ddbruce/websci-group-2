@@ -1,11 +1,9 @@
 <h1>{{ menu?.name }}</h1>
 
-<div *ngFor="let section of sections">
+<div *ngFor="let section of menu?.sections">
   <h2>{{ section.name }}</h2>
 
-  <!-- <div *ngFor="let item of getSectionItems(section)"> -->
   <div *ngFor="let item of section.items">
-    <!-- {{ item.name }} - {{ item.price }} -->
-    {{ item }}
+    {{ item.name }} - {{ item.price }}
   </div>
 </div>

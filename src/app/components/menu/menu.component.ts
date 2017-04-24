@@ -12,8 +12,6 @@ import { MenuService } from '../../services/menu.service';
 
 export class MenuComponent implements OnInit, OnDestroy {
   menu: Menu;
-  sections: Array<Section>;
-  items: Array<Item>;
   stylesheetUrl: string; // TODO
   private sub: any;
 
@@ -25,28 +23,11 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.menuService.getMenuById(menuId)
         .then(data => {
           this.menu = data;
-          this.menuService.getMenuSections(menuId)
-            .then(data => {
-              this.sections = data;
-              this.sections.forEach(section => {
-                this.menuService.getItemsById(section.items)
-                  .then(data => {
-                    this.items = data;
-                  });
-              });
-            });
         });
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-  }
-
-  getSectionItems(section: Section) {
-    console.log('items:', this.items);
-    return section.items.map(itemId => {
-      return this.items.find(item => { return item._id == itemId });
-    });
   }
 }

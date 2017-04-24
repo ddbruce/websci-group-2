@@ -15,7 +15,7 @@ var menuSchema = new Schema({
   },
   description: String,
   css: String,
-  sections: Array
+  sections: [{ type: objectId, ref: 'Section' }]
 });
 
 module.exports = mongoose.model('Menu', menuSchema);

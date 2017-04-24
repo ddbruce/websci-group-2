@@ -46,19 +46,6 @@ var MenuService = (function () {
             return data.find(function (menu) { return menu._id == menuId; });
         });
     };
-    MenuService.prototype.getMenuSections = function (menuId) {
-        return this.http.get(this.baseUrl + 'menu/menu-sections/' + menuId)
-            .toPromise()
-            .then(function (response) { return response.json(); });
-    };
-    MenuService.prototype.getItemsById = function (itemIds) {
-        var _this = this;
-        return Promise.all(itemIds.map(function (itemId) {
-            return _this.http.get(_this.baseUrl + 'item/' + itemId)
-                .toPromise()
-                .then(function (response) { return response.json(); });
-        }));
-    };
     MenuService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
