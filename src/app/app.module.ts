@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'add-items', component: AddItemsComponent },
-  { path: 'menu-builder', component: MenuBuilderComponent }
+  { path: 'menu-builder/:name/:desc', component: MenuBuilderComponent }
 ];
 
 @NgModule({
@@ -46,7 +46,6 @@ const appRoutes: Routes = [
       MenuService,
       UserService,
       AuthenticationService,
-      Menu,
       Section,
       Item
   ],
