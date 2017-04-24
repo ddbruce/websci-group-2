@@ -14,12 +14,21 @@ declare var menuBuilderFunctionality: any;
 })
 
 export class MenuBuilderComponent {
+  //init
   title: string;
+  domElement: any;
+  editItemsDialog: any;
+  addItemDialog: any;
+  @ViewChild('grid') el: ElementRef;
   name: string;
   desc: string;
   private sub: any;
   socket = io('http://localhost:3000');
-  constructor(elementRef: ElementRef,private route: ActivatedRoute ) {
+  model: any = {};
+  spacerCounter = 0;
+
+  constructor(private menuService: MenuService,elementRef: ElementRef,private route: ActivatedRoute ) {
+    this.domElement = elementRef;
   }
 
   //Initializing Menu-builder
@@ -33,16 +42,54 @@ export class MenuBuilderComponent {
       });
   }
 
+  ngAfterContentInit(): void {
+    this.editItemsDialog = this.domElement.nativeElement.querySelector('#edit-items-dialog');
+    this.addItemDialog = this.domElement.nativeElement.querySelector('#add-item-dialog');
+  }
+
   addSection(){
-      menuBuilderFunctionality.addSection();
+      let section:Section = new Section(this.model.newSectionName);
+      this.menuService.newSection(section);
+      menuBuilderFunctionality.addSection(this.model.newSectionName);
   }
 
   addSpacer(){
-    menuBuilderFunctionality.addSpacer();
+    let newSecName:String = "spacer"+this.spacerCounter;
+    let section:Section = new Section(newSecName);
+    this.menuService.newSection(section);
+    menuBuilderFunctionality.addSpacer("spacer"+this.spacerCounter);
+    this.spacerCounter++;
   }
   saveMenu() {
     this.socket.emit('create-css', this.name);
     console.log("Sent "+this.name+this.desc);
   }
+
+  editItems() {
+    this.editItemsDialog.showModal();
+    menuBuilderFunctionality.editItems();
+  }
+
+  addItem() {
+    this.addItemDialog.showModal();
+  }
+
+  hideMenu() {
+      menuBuilderFunctionality.hideMenu();
+  }
+
+  // This saves the order of the items in a section, as dictated by sortable and the user
+  saveItems() {
+    this.editItemsDialog.close();
+  }
+
+  // This saves the info from the Add Item form
+  saveItem() {
+    let item: Item = new Item({name:this.model.newItemName,price:this.model.newItemPrice,description:this.model.newItemDesc,isVegetarian:this.model.isVeget,isVegan:this.model.isVegan,isGlutenFree:this.model.isGF,calories:this.model.newItemCal});
+    this.menuService.newItem(item);
+    menuBuilderFunctionality.addItem(this.model.newItemName,this.model.currSection);
+    this.addItemDialog.close();
+  }
+
   // TODO implement drag-and-drop functionality
 }

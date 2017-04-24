@@ -23,6 +23,8 @@ const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'add-items', component: AddItemsComponent },
+  { path: 'menu-builder', component: MenuBuilderComponent },
+  { path: 'menu/:id', component: MenuComponent },
   { path: 'menu-builder/:name/:desc', component: MenuBuilderComponent }
 ];
 
@@ -45,9 +47,7 @@ const appRoutes: Routes = [
   providers: [
       MenuService,
       UserService,
-      AuthenticationService,
-      Section,
-      Item
+      AuthenticationService
   ],
   bootstrap: [ AppComponent ]
 })

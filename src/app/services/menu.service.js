@@ -12,15 +12,25 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 // Statics
 require('rxjs/add/operator/toPromise');
+require('rxjs/add/operator/map');
 var MenuService = (function () {
     function MenuService(http) {
         this.http = http;
         this.baseUrl = '/api/';
         this.menus = [];
+        this.items = [];
+        this.sections = [];
     }
+    //Menu service handlers for menu-builder component
     MenuService.prototype.newMenu = function (menu) {
         console.log(menu);
         this.menus.push(menu);
+    };
+    MenuService.prototype.newSection = function (section) {
+        this.sections.push(section);
+    };
+    MenuService.prototype.newItem = function (item) {
+        this.items.push(item);
     };
     MenuService.prototype.getUserMenus = function () {
         var currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;
@@ -28,6 +38,13 @@ var MenuService = (function () {
         return this.http.get(this.baseUrl + 'user/user-menus/' + currentUserId)
             .toPromise()
             .then(function (response) { return response.json(); });
+    };
+    MenuService.prototype.getMenuById = function (menuId) {
+        // TODO handle case of nonexistent menu
+        return this.getUserMenus()
+            .then(function (data) {
+            return data.find(function (menu) { return menu._id == menuId; });
+        });
     };
     MenuService = __decorate([
         core_1.Injectable(), 

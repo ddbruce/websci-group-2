@@ -4,7 +4,7 @@
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">
-        <a><img class="logo" src="assets/menuoso_logo_white.png"></a>
+        <a [routerLink]="['/home']"><img class="logo" src="assets/menuoso_logo_white.png"></a>
       </span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
@@ -16,7 +16,7 @@
   </header>
   <div [hidden]="!isLoggedIn()" class="mdl-layout__drawer">
     <span class="mdl-layout-title">
-      <a href="#"><img class="logo" src="assets/menuoso_logo.png"></a>
+      <a [routerLink]="['/home']"><img class="logo" src="assets/menuoso_logo.png"></a>
     </span>
     <nav class="mdl-navigation">
       <a (click)="logout()" class="mdl-navigation__link">Logout</a>

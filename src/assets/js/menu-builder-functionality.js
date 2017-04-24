@@ -1,11 +1,12 @@
 //Items initialization, items is the list of sections
 var $items;
 var $grid;
+var $spacerCount = 0;
 
 //Goes through each item found in the menu and binds right-click event and draggability
 function makeEachClickable(i, itemElem){
     $(itemElem).bind("contextmenu", function (event) {
-
+        $("#currSection").val(itemElem.attr('id'));
         // Avoid the real one
         event.preventDefault();
 
@@ -19,10 +20,8 @@ function makeEachClickable(i, itemElem){
             });
     });
     $(itemElem).bind("mousedown", function (e) {
-
         // If the clicked element is not the menu
         if (!$(e.target).parents(".custom-menu").length > 0) {
-
             // Hide it
             $(".custom-menu").hide(100);
         }
@@ -49,9 +48,15 @@ function initPackery(){
     $grid.find('.item').each(makeEachClickable);
 }
 
-function addItem(newSection){
+function addItem(newSectionName,newSection){
     $(function () {
-        var item = $("<div class='item'></div>");
+        if(newSectionName.length>0&&newSection){
+            var item = $("<div class='item menuBuilderTitle' id='"+newSectionName+"'>"+newSectionName+"</div>");
+        }
+        else{
+            var item = $("<div class='item' id='spacer"+$spacerCount+"'></div>");
+            $spacerCount++;
+        }
         $grid.append(item).packery('appended',item);
         item.draggable({
             containment: '#menu-builder'
@@ -70,6 +75,10 @@ function addItem(newSection){
     });
 }
 
+function editItems() {
+    $("#items").sortable();
+}
+
 //Javascript object imported by Angular to call functions init, addSection, etc.
 var menuBuilderFunctionality = (function () {
     return {
@@ -79,15 +88,26 @@ var menuBuilderFunctionality = (function () {
                 initPackery();
             });
         },
-        addSection: function(){
+        addSection: function(newSectionName){
             $(function () {
-                addItem(true);
+                addItem(newSectionName,true);
             });
         },
-        addSpacer: function(){
-            $(function(){
-                addItem(false);
-            })
+        addSpacer: function(newSpacerName){
+            $(function () {
+                addItem(newSpacerName,false);
+            });
+        },
+        editItems: function () {
+            $(function () {
+                editItems();
+            });
+        },
+        addItem: function (newItemName) {
+            $(function () {
+                var currSec = '#'+$('#currSection').val();
+                $(currSec).append("<p class='menuBuilderItem'>" + newItemName + "</p>");
+            });
         }
     }
 })(menuBuilderFunctionality|| {});

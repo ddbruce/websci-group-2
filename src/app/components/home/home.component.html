@@ -22,6 +22,9 @@
         <button [disabled]="!menu.isLive" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Go Live
         </button>
+        <button [routerLink]="['/menu', menu._id]" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+          View Menu
+        </button>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -37,12 +40,12 @@
     <!-- menu name input -->
     <form action="#">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="new-menu-name">
+        <input class="mdl-textfield__input" type="text"  [(ngModel)]="model.newMenuName" [ngModelOptions]="{standalone: true}" name="newMenuName" id="new-menu-name">
         <label class="mdl-textfield__label" for="new-menu-name">Name</label>
       </div>
       <!-- menu description input -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" rows="3" id="new-menu-description">
+        <input class="mdl-textfield__input" type="text" rows="3"  [(ngModel)]="model.newMenuDesc" [ngModelOptions]="{standalone: true}" name="newMenuDesc" id="new-menu-description">
         <label class="mdl-textfield__label" for="new-menu-description">Description</label>
       </div>
     </form>

@@ -13,7 +13,7 @@ var sectionSchema = new Schema({
     type: String,
     required: true
   },
-  items: Array
+  items: [{ type: objectId, ref: 'Item' }]
 });
 
 module.exports = mongoose.model('Section', sectionSchema);

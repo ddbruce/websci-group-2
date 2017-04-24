@@ -1,8 +1,8 @@
 const express = require("express");
+const mongoose = require("mongoose");
 var user = require("../models/user.js");
 var menu = require("../models/menu.js");
 var router = express.Router();
-const mongoose = require("mongoose");
 
 router.get("/", function (req, res) {
     user.find({}, function (err, data) {
@@ -71,8 +71,7 @@ router.get("/", function (req, res) {
         res.send("error");
         return;
     }
-  })
-    .lean();
+  });
 
   _user.exec(function (err, docs) {
     var menuIds = docs.menus.map(function (menuId) {
@@ -89,7 +88,11 @@ router.get("/", function (req, res) {
           return;
       }
     })
-      .lean();
+    // Fill with "joined" info instead of just ids
+    .populate({
+      path: 'sections',
+      populate: { path: 'items' }
+    });;
 
     menus.exec(function (err, docs) {
       res.send(docs);
