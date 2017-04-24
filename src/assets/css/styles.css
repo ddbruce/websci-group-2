@@ -160,3 +160,16 @@ a:hover {
   background: #C09;
   border: 1px solid #333;
   border-color: rgba(0, 0, 0, 0.3); }
+}
+
+.page-credits {
+  text-align: center; }
+
+.error-page {
+  margin-top: 200px !important;
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+  color: white;
+  text-align: center; }
+
+.loading-page {
+  margin-top: 400px !important; }

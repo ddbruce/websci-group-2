@@ -1,4 +1,4 @@
-<div class="mdl-grid home-grid">
+<div class="mdl mdl-grid home-grid center-items">
     <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
         <h2 class="header-title">{{ title }}</h2>
         <button (click)="newMenuDialog.showModal()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">New Menu <i class="material-icons">add</i></button>
@@ -6,7 +6,7 @@
     <div class="mdl-layout-spacer"></div>
 
 
-    <div (click)="newMenuDialog.showModal()" class="mdl-cell mdl-cell--8-col mdl-cell--2-offset newMenu flex-center-vertically" *ngIf="menus.length == 0">
+    <div (click)="newMenuDialog.showModal()" class="mdl-cell mdl-cell--8-col newMenu flex-center-vertically" *ngIf="menus.length == 0">
       <h5><strong>Click here to make your first menu!</strong></h5>
     </div>
 
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <dialog id="new-menu-dialog" class="mdl-dialog">
+    <dialog id="new-menu-dialog" class="mdl mdl-dialog">
       <h3 class="mdl-dialog__title">New Menu</h3>
       <div class="mdl-dialog__content">
         <!-- menu name input -->
