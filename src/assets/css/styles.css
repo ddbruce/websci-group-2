@@ -160,6 +160,7 @@ a:hover {
   background: #C09;
   border: 1px solid #333;
   border-color: rgba(0, 0, 0, 0.3); }
+}
 
 .page-credits {
   text-align: center; }
@@ -171,6 +172,7 @@ a:hover {
   text-align: center; }
 
 .loading-page {
+<<<<<<< HEAD
   margin-top: 400px !important; }
 
 .mdl-card:hover {
@@ -178,3 +180,6 @@ a:hover {
 
 .center-button {
   text-align: center; }
+=======
+  margin-top: 400px !important; }
+>>>>>>> 2bc3d85acf342d7f6d276ba4ee4399946b5f7adf
