@@ -9,6 +9,7 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuBuilderComponent } from './components/menu-builder/menu-builder.component';
+import { MenuEditorComponent } from './components/menu-editor/menu-editor.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   { path: 'add-items', component: AddItemsComponent },
   { path: 'menu-builder', component: MenuBuilderComponent },
   { path: 'menu/:id', component: MenuComponent },
-  { path: 'menu-builder/:name/:desc', component: MenuBuilderComponent }
+  { path: 'menu-builder/:name/:desc', component: MenuBuilderComponent },
+  { path: 'menu-editor/:id', component: MenuEditorComponent }
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     MenuComponent,
     LoginComponent,
     MenuBuilderComponent,
-    AddItemsComponent
+    AddItemsComponent,
+    MenuEditorComponent
   ],
   providers: [
       MenuService,
