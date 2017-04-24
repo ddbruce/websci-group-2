@@ -10,7 +10,7 @@
       <h5><strong>Click here to make your first menu!</strong></h5>
     </div>
 
-    <div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col" mdl>
+    <div *ngFor="let menu of m enus" class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col" mdl>
       <div class="mdl-card__title">
         <h3 class="mdl-card__title-text">{{ menu.name }}</h3>
       </div>
@@ -37,12 +37,12 @@
     <!-- menu name input -->
     <form action="#">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="new-menu-name">
+        <input class="mdl-textfield__input" type="text"  [(ngModel)]="model.newMenuName" [ngModelOptions]="{standalone: true}" name="newMenuName" id="new-menu-name">
         <label class="mdl-textfield__label" for="new-menu-name">Name</label>
       </div>
       <!-- menu description input -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" rows="3" id="new-menu-description">
+        <input class="mdl-textfield__input" type="text" rows="3"  [(ngModel)]="model.newMenuDesc" [ngModelOptions]="{standalone: true}" name="newMenuDesc" id="new-menu-description">
         <label class="mdl-textfield__label" for="new-menu-description">Description</label>
       </div>
     </form>
