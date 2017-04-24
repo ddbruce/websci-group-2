@@ -7,7 +7,7 @@ import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'menu',
-  templateUrl: './app/components/menu/menu.component.html',
+  templateUrl: './app/components/menu/menu.component.html'
 })
 
 export class MenuComponent implements OnInit, OnDestroy {

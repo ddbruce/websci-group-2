@@ -1,49 +1,51 @@
-<h2>{{ title }}</h2>
+<div class="mdl mdl-grid home-grid center-items">
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+        <h2 class="header-title">{{ title }}</h2>
+        <button (click)="newMenuDialog.showModal()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">New Menu <i class="material-icons">add</i></button>
+    </div>
+    <div class="mdl-layout-spacer"></div>
 
-<button (click)="newMenuDialog.showModal()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">New Menu</button>
 
-<div *ngIf="menus.length == 0">
-  You don't have any menus yet!
-</div>
+    <div (click)="newMenuDialog.showModal()" class="mdl-cell mdl-cell--8-col newMenu flex-center-vertically" *ngIf="menus.length == 0">
+      <h5><strong>Click here to make your first menu!</strong></h5>
+    </div>
 
-<div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp" mdl>
-  <div class="mdl-card__title">
-    <h3 class="mdl-card__title-text">{{ menu.name }}</h3>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Mauris sagittis pellentesque lacus eleifend lacinia...
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Get Started
-    </button>
-    <button [disabled]="!menu.isLive" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Go Live
-    </button>
-    <button [routerLink]="['/menu', menu._id]" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-      View Menu
-    </button>
-  </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">mode_edit</i>
-    </button>
-  </div>
-</div>
+    <div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col" mdl>
+      <div class="mdl-card__title">
+        <h3 class="mdl-card__title-text">{{ menu.name }}</h3>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia...
+      </div>
+      <div class="mdl-card__actions mdl-card--border center-button">
+        <button [disabled]="!menu.isLive" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Go Live
+        </button>
+        <button (click)= class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Menu
+        </button>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">mode_edit</i>
+        </button>
+      </div>
+    </div>
 
-<dialog id="new-menu-dialog" class="mdl-dialog">
+
+<dialog id="new-menu-dialog" class="mdl mdl-dialog">
   <h3 class="mdl-dialog__title">New Menu</h3>
   <div class="mdl-dialog__content">
     <!-- menu name input -->
     <form action="#">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="new-menu-name">
+        <input class="mdl-textfield__input" type="text"  [(ngModel)]="model.newMenuName" [ngModelOptions]="{standalone: true}" name="newMenuName" id="new-menu-name">
         <label class="mdl-textfield__label" for="new-menu-name">Name</label>
       </div>
       <!-- menu description input -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" rows="3" id="new-menu-description">
+        <input class="mdl-textfield__input" type="text" rows="3"  [(ngModel)]="model.newMenuDesc" [ngModelOptions]="{standalone: true}" name="newMenuDesc" id="new-menu-description">
         <label class="mdl-textfield__label" for="new-menu-description">Description</label>
       </div>
     </form>

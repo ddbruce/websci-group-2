@@ -5,7 +5,7 @@ import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'menuoso-home',
-  templateUrl: './app/components/home/home.component.html',
+  templateUrl: './app/components/home/home.component.html'
 })
 
 export class HomeComponent {
@@ -13,6 +13,9 @@ export class HomeComponent {
   menus: Array<Menu>;
   newMenuDialog: any;
   domElement: any;
+  model: any = {};
+  newMenuName: string;
+  newMenuDesc: string;
 
   constructor(private menuService: MenuService, element: ElementRef, private router: Router) {
     this.title = 'Your Menus';
@@ -31,9 +34,12 @@ export class HomeComponent {
 
   createNewMenu() {
     console.log('TODO grab form info');
-    // menuService.newMenu()
+    this.newMenuName = this.model.newMenuName;
+    this.newMenuDesc = this.model.newMenuDesc;
+    let menu:Menu = new Menu({name: this.model.newMenuName, desc: this.model.newMenuDesc});
+    this.menuService.newMenu(menu);
     this.newMenuDialog.close();
-    this.router.navigateByUrl('/menu-builder');
+    this.router.navigate(['/menu-builder',this.newMenuName,this.newMenuDesc]);
     this.menuService.getUserMenus();
   }
 }

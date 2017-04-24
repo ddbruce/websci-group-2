@@ -10,9 +10,6 @@ const fs = require("fs");
 const routes = require("./routes/web"); // web routes
 const apiRoutes = require("./routes/api"); // api routes
 const connection = require("./config/db"); // mongodb connection
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
-
 
 const port = 3000;
 
@@ -33,26 +30,6 @@ app.use('/node_modules', express.static(path.join(__dirname, '../node_modules'))
 app.use("/", routes);
 app.use("/api", apiRoutes);
 
-//Socket handlers
-io.on('connection', function(socket){
-  console.log('a user connected');
-
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-
-  socket.on("login",function(data){
-    console.log('Logging in with: '+data);
-  });
-
-  // Handler for creating the css of a menu
-  socket.on("create-css", function(menuName, css){
-    fs.writeFile(`../src/assets/css/${menuName}-styles.css`, css, function(err) {
-      if (err) throw err;
-    });
-  });
-});
-
 // Error handling at then end of the middleware stack or it won't work
 app.use(function(req, res) {
   res.status(404);
@@ -71,6 +48,28 @@ app.use(function(req, res) {
   res.type('txt').send('Not found');
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
 	console.log('Menuoso server listening on port ' + port);
+});
+
+const io = require('socket.io').listen(server);
+
+//Socket handlers
+io.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
+  socket.on("login",function(data){
+    console.log('Logging in with: '+data);
+  });
+
+  // Handler for creating the css of a menu
+  socket.on("create-css", function(menuName, css){
+    fs.writeFile(path.join(__dirname, `../src/assets/css/${menuName}-styles.css`), css, function(err) {
+      if (err) throw err;
+    });
+  });
 });

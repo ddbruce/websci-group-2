@@ -13,7 +13,12 @@ export class MenuService {
   private baseUrl = '/api/';
 
   constructor(private http: Http) {
-    console.log('Created MenuService');
+    this.menus = [];
+  }
+
+  newMenu(menu:Menu){
+    console.log(menu);
+    this.menus.push(menu);
   }
 
   getUserMenus(): Promise<Menu[]> {

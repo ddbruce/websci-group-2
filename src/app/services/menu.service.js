@@ -17,8 +17,12 @@ var MenuService = (function () {
     function MenuService(http) {
         this.http = http;
         this.baseUrl = '/api/';
-        console.log('Created MenuService');
+        this.menus = [];
     }
+    MenuService.prototype.newMenu = function (menu) {
+        console.log(menu);
+        this.menus.push(menu);
+    };
     MenuService.prototype.getUserMenus = function () {
         var currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;
         console.log('currentUserId:', currentUserId);

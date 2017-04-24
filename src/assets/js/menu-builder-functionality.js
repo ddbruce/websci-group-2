@@ -19,10 +19,8 @@ function makeEachClickable(i, itemElem){
             });
     });
     $(itemElem).bind("mousedown", function (e) {
-
         // If the clicked element is not the menu
         if (!$(e.target).parents(".custom-menu").length > 0) {
-
             // Hide it
             $(".custom-menu").hide(100);
         }
@@ -70,6 +68,10 @@ function addItem(newSection){
     });
 }
 
+function editItems() {
+    $("#items").sortable();
+}
+
 //Javascript object imported by Angular to call functions init, addSection, etc.
 var menuBuilderFunctionality = (function () {
     return {
@@ -85,9 +87,14 @@ var menuBuilderFunctionality = (function () {
             });
         },
         addSpacer: function(){
-            $(function(){
+            $(function () {
                 addItem(false);
-            })
+            });
+        },
+        editItems: function () {
+            $(function () {
+                editItems();
+            });
         }
     }
 })(menuBuilderFunctionality|| {});

@@ -124,7 +124,8 @@ a:hover {
   font-family: sans-serif;
   background: #FFF;
   color: #333;
-  border-radius: 5px; }
+  border-radius: 5px;
+  list-style-type: none; }
 
 .custom-menu li {
   padding: 8px 12px;
@@ -133,6 +134,25 @@ a:hover {
 .custom-menu li:hover {
   background-color: #DEF; }
 
+.newMenu {
+  border-radius: 7px;
+  border-style: dashed;
+  padding: 0 auto !important;
+  border-color: #E0E0E0; }
+
+.newMenu:hover {
+  background-color: #E0E0E0; }
+
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  text-align: center; }
+
+.header-title {
+  color: #424242; }
+
 .item {
   width: 179.5px;
   height: 179.5px;
@@ -140,3 +160,21 @@ a:hover {
   background: #C09;
   border: 1px solid #333;
   border-color: rgba(0, 0, 0, 0.3); }
+
+.page-credits {
+  text-align: center; }
+
+.error-page {
+  margin-top: 200px !important;
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+  color: white;
+  text-align: center; }
+
+.loading-page {
+  margin-top: 400px !important; }
+
+.mdl-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important; }
+
+.center-button {
+  text-align: center; }
