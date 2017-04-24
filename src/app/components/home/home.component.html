@@ -10,7 +10,7 @@
       <h5><strong>Click here to make your first menu!</strong></h5>
     </div>
 
-    <div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp" mdl>
+    <div *ngFor="let menu of menus" class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col" mdl>
       <div class="mdl-card__title">
         <h3 class="mdl-card__title-text">{{ menu.name }}</h3>
       </div>
@@ -18,10 +18,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Mauris sagittis pellentesque lacus eleifend lacinia...
       </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Get Started
-        </button>
+      <div class="mdl-card__actions mdl-card--border center-button">
         <button [disabled]="!menu.isLive" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Go Live
         </button>
@@ -33,25 +30,26 @@
       </div>
     </div>
 
-    <dialog id="new-menu-dialog" class="mdl mdl-dialog">
-      <h3 class="mdl-dialog__title">New Menu</h3>
-      <div class="mdl-dialog__content">
-        <!-- menu name input -->
-        <form action="#">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="new-menu-name">
-            <label class="mdl-textfield__label" for="new-menu-name">Name</label>
-          </div>
-          <!-- menu description input -->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" rows="3" id="new-menu-description">
-            <label class="mdl-textfield__label" for="new-menu-description">Description</label>
-          </div>
-        </form>
+
+
+<dialog id="new-menu-dialog" class="mdl mdl-dialog">
+  <h3 class="mdl-dialog__title">New Menu</h3>
+  <div class="mdl-dialog__content">
+    <!-- menu name input -->
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="new-menu-name">
+        <label class="mdl-textfield__label" for="new-menu-name">Name</label>
       </div>
-      <div class="mdl-dialog__actions">
-        <button (click)="newMenuDialog.close()" type="button" class="mdl-button">Cancel</button>
-        <button (click)="createNewMenu()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Continue</button>
+      <!-- menu description input -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" rows="3" id="new-menu-description">
+        <label class="mdl-textfield__label" for="new-menu-description">Description</label>
       </div>
-    </dialog>
-</div>
+    </form>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button (click)="newMenuDialog.close()" type="button" class="mdl-button">Cancel</button>
+    <button (click)="createNewMenu()" type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Continue</button>
+  </div>
+</dialog>
