@@ -38,6 +38,11 @@ export class ItemEditorComponent implements OnInit {
     this.menuService.saveItem(itemId, formValues)
       .then(data => {
         this.item = data;
+        let snackbarContainer = this.domElement.nativeElement.querySelector('#item-editor-snackbar-' + this.item._id);
+        let snackText = {
+          message: 'Successfully updated ' + formValues.name + '.'
+        };
+        snackbarContainer.MaterialSnackbar.showSnackbar(snackText);
       });
   }
 }
