@@ -33,7 +33,7 @@ export class MenuService {
     this.items.push(item);
   }
 
-  
+
 
   getUserMenus(): Promise<Menu[]> {
     let currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;
@@ -50,19 +50,5 @@ export class MenuService {
       .then(data => {
         return data.find(menu => { return menu._id == menuId });
       });
-  }
-
-  getMenuSections(menuId: string): Promise<Section[]> {
-    return this.http.get(this.baseUrl + 'menu/menu-sections/' + menuId)
-      .toPromise()
-      .then(response => response.json() as Section[]);
-  }
-
-  getItemsById(itemIds: Array<string>): Promise<Item[]> {
-    return Promise.all(itemIds.map(itemId => {
-      return this.http.get(this.baseUrl + 'item/' + itemId)
-        .toPromise()
-        .then(response => response.json() as Item);
-    }));
   }
 }

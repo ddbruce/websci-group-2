@@ -13,16 +13,29 @@ router.get("/", function (req, res) {
         res.send(data);
     });
 }).get("/:id", function (req, res) {
-    var id = req.params.id;
-    menu.find({
-        _id: id
-    }, function (err, data) {
-        if (err) {
-            res.send("error");
-            return;
-        }
-        res.send(data[0]);
-    });
+  var id = req.params.id;
+  var _menu = menu.findOne({
+    _id: id
+  }, function (err) {
+    if (err) {
+        res.send("error");
+        return;
+    }
+  })
+  // Fill with "joined" info instead of just ids
+  .populate({
+    path: 'sections',
+    populate: { path: 'items' }
+  });
+
+  _menu.exec(function (err, menu) {
+    if (err) {
+        res.send("error");
+        return;
+    }
+
+    res.send(menu);
+  });
 }).post("/", function (req, res) {
     var obj = req.body;
     var model = new menu(obj);
@@ -62,39 +75,6 @@ router.get("/", function (req, res) {
         }
         res.send("deleted");
     });
-}).get("/menu-sections/:id", function (req, res) {
-  var id = req.params.id;
-  var _menu = menu.findOne({
-    _id: id
-  }, function (err) {
-    if (err) {
-        res.send("error");
-        return;
-    }
-  })
-    .lean();
-
-  _menu.exec(function (err, docs) {
-    var sectionIds = docs.sections.map(function (sectionId) {
-      return mongoose.Types.ObjectId(sectionId);
-    });
-
-    var sections = section.find({
-      _id: {
-        "$in": sectionIds
-      }
-    }, function (err) {
-      if (err) {
-          res.send("error");
-          return;
-      }
-    })
-      .lean();
-
-    sections.exec(function (err, docs) {
-      res.send(docs);
-    });
-  });
 });
 
 module.exports = router;

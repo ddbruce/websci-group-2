@@ -71,8 +71,7 @@ router.get("/", function (req, res) {
         res.send("error");
         return;
     }
-  })
-    .lean();
+  });
 
   _user.exec(function (err, docs) {
     var menuIds = docs.menus.map(function (menuId) {
@@ -89,7 +88,11 @@ router.get("/", function (req, res) {
           return;
       }
     })
-      .lean();
+    // Fill with "joined" info instead of just ids
+    .populate({
+      path: 'sections',
+      populate: { path: 'items' }
+    });;
 
     menus.exec(function (err, docs) {
       res.send(docs);
