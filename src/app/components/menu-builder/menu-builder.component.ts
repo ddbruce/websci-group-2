@@ -64,6 +64,10 @@ export class MenuBuilderComponent {
     this.addItemDialog.showModal();
   }
 
+  hideMenu() {
+      menuBuilderFunctionality.hideMenu();
+  }
+
   // This saves the order of the items in a section, as dictated by sortable and the user
   saveItems() {
     // TODO
