@@ -5,7 +5,7 @@ import { Item } from '../../_models/item';
 
 @Component({
   selector: 'menu',
-  templateUrl: './app/components/menu/menu.component.html',
+  templateUrl: './app/components/menu/menu.component.html'
 })
 
 export class MenuComponent {
