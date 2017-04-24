@@ -46,6 +46,12 @@ var MenuService = (function () {
             return data.find(function (menu) { return menu._id == menuId; });
         });
     };
+    MenuService.prototype.getItemById = function (itemId) {
+        console.log('\tgetItemById id:', itemId);
+        return this.http.get(this.baseUrl + 'item/' + itemId)
+            .toPromise()
+            .then(function (response) { return response.json(); });
+    };
     MenuService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

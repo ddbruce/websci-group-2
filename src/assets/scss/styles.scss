@@ -249,8 +249,12 @@ a:hover {
 
 .mdl-data-table {
   width: 100%;
-  
-  td:first-child {
-    text-align: left;
+
+  td {
+    width: 100%;
+
+    &:first-child {
+      text-align: left;
+    }
   }
 }

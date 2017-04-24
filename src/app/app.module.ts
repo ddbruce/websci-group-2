@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuBuilderComponent } from './components/menu-builder/menu-builder.component';
 import { MenuEditorComponent } from './components/menu-editor/menu-editor.component';
+import { ItemEditorComponent } from './components/item-editor/item-editor.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     LoginComponent,
     MenuBuilderComponent,
     AddItemsComponent,
-    MenuEditorComponent
+    MenuEditorComponent,
+    ItemEditorComponent
   ],
   providers: [
       MenuService,

@@ -1,0 +1,18 @@
+<td>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" [(ngModel)]="model.name" [ngModelOptions]="{standalone: true}" name="name-{{ item?.id }}" type="text">
+    <label class="mdl-textfield__label" for="name-{{ item?.id }}">Name</label>
+  </div>
+</td>
+<td>
+  <!-- ${{ item?.price }} -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" [(ngModel)]="model.price" [ngModelOptions]="{standalone: true}" name="price-{{ item?.id }}" type="number">
+    <label class="mdl-textfield__label" for="price-{{ item?.id }}">Price</label>
+  </div>
+</td>
+<td>
+  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">check_circle</i>
+  </button>
+</td>

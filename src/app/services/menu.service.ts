@@ -51,4 +51,11 @@ export class MenuService {
         return data.find(menu => { return menu._id == menuId });
       });
   }
+
+  getItemById(itemId: string): Promise<Item> {
+    console.log('\tgetItemById id:', itemId);
+    return this.http.get(this.baseUrl + 'item/' + itemId)
+      .toPromise()
+      .then(response => response.json() as Item);
+  }
 }
