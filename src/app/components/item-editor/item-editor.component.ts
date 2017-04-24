@@ -34,7 +34,10 @@ export class ItemEditorComponent implements OnInit {
     });
   }
 
-  saveItem() {
-    // TODO this.menuService.saveItem(itemId).then(data => { this.item = data; });
+  saveItem(itemId: string, formValues: any) {
+    this.menuService.saveItem(itemId, formValues)
+      .then(data => {
+        this.item = data;
+      });
   }
 }

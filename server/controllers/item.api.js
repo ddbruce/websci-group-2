@@ -36,12 +36,12 @@ router.get("/", function (req, res) {
     var obj = req.body;
 
     item.findByIdAndUpdate(id, obj,
-        function (err) {
+        function (err, doc) {
             if (err) {
                 res.send("error");
                 return;
             }
-            res.send("updated");
+            res.send(doc);
         });
 }).delete("/", function (req, res) {
     item.remove({}, function (err) {

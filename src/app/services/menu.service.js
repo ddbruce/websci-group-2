@@ -52,6 +52,12 @@ var MenuService = (function () {
             .toPromise()
             .then(function (response) { return response.json(); });
     };
+    MenuService.prototype.saveItem = function (itemId, formValues) {
+        console.log('menuService.saveItem(', itemId, ',', formValues, ')');
+        return this.http.put(this.baseUrl + 'item/' + itemId, formValues)
+            .toPromise()
+            .then(function (response) { return response.json(); });
+    };
     MenuService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

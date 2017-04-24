@@ -58,4 +58,11 @@ export class MenuService {
       .toPromise()
       .then(response => response.json() as Item);
   }
+
+  saveItem(itemId: string, formValues: any): Promise<Item> {
+    console.log('menuService.saveItem(', itemId, ',', formValues, ')');
+    return this.http.put(this.baseUrl + 'item/' + itemId, formValues)
+      .toPromise()
+      .then(response => response.json() as Item);
+  }
 }
