@@ -6,6 +6,7 @@ var express = require('express')
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const fs = require("fs");
 const routes = require("./routes/web"); // web routes
 const apiRoutes = require("./routes/api"); // api routes
 const connection = require("./config/db"); // mongodb connection
@@ -43,6 +44,31 @@ io.on('connection', function(socket){
   socket.on("login",function(data){
     console.log('Logging in with: '+data);
   });
+
+  // Handler for creating the css of a menu
+  socket.on("create-css", function(menuName, css){
+    fs.writeFile(`../src/assets/css/${menuName}-styles.css`, css, function(err) {
+      if (err) throw err;
+    });
+  });
+});
+
+// Error handling at then end of the middleware stack or it won't work
+app.use(function(req, res) {
+  res.status(404);
+
+  if (req.accepts('html')) {
+    res.sendFile(path.join(__dirname, '../src', "/404.html"));
+    return;
+  }
+  if (req.accepts('json')) {
+    res.send({
+        error: 'Not found'
+    });
+    return;
+  }
+
+  res.type('txt').send('Not found');
 });
 
 app.listen(port, () => {
