@@ -18,11 +18,19 @@ var MenuService = (function () {
         this.http = http;
         this.baseUrl = '/api/';
         this.menus = [];
+        this.items = [];
+        this.sections = [];
     }
     //Menu service handlers for menu-builder component
     MenuService.prototype.newMenu = function (menu) {
         console.log(menu);
         this.menus.push(menu);
+    };
+    MenuService.prototype.newSection = function (section) {
+        this.sections.push(section);
+    };
+    MenuService.prototype.newItem = function (item) {
+        this.items.push(item);
     };
     MenuService.prototype.getUserMenus = function () {
         var currentUserId = JSON.parse(localStorage.getItem('currentUser')).id;

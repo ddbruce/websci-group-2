@@ -6,4 +6,7 @@ export class Section {
   _id: string;
   name: string;
   items: Array<string>;
+  constructor(arg?:any){
+    this.name = arg && arg.name;
+  }
 }

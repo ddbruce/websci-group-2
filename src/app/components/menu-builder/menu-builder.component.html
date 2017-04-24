@@ -19,9 +19,10 @@
             </div>
         </div>
         <div id="menu-settings">
-            <button (click)="addSection()">Add Section</button>
-            <button (click)="addSpacer()">Add Spacer</button>
-            <button (click)="saveMenu()">Save Menu</button>
+            <input class="mdl-textfield__input" type="text" placeholder="Section name" [(ngModel)]="model.newSectionName" [ngModelOptions]="{standalone: true}" name="newSectionName" id="new-section-name"/>
+            <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="addSection()">Add Section</button>
+            <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="addSpacer()">Add Spacer</button>
+            <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="saveMenu()">Save Menu</button>
         </div>
     </div>
 </main>

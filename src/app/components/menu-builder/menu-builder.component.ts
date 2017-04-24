@@ -25,8 +25,9 @@ export class MenuBuilderComponent {
   private sub: any;
   socket = io('http://localhost:3000');
   model: any = {};
+  spacerCounter = 0;
 
-  constructor(elementRef: ElementRef,private route: ActivatedRoute ) {
+  constructor(private menuService: MenuService,elementRef: ElementRef,private route: ActivatedRoute ) {
     this.domElement = elementRef;
   }
 
@@ -47,11 +48,17 @@ export class MenuBuilderComponent {
   }
 
   addSection(){
-      menuBuilderFunctionality.addSection();
+      let section:Section = new Section(this.model.newSectionName);
+      this.menuService.newSection(section);
+      menuBuilderFunctionality.addSection(this.model.newSectionName);
   }
 
   addSpacer(){
-    menuBuilderFunctionality.addSpacer();
+    let newSecName:String = "spacer"+this.spacerCounter;
+    let section:Section = new Section(newSecName);
+    this.menuService.newSection(section);
+    menuBuilderFunctionality.addSpacer("spacer"+this.spacerCounter);
+    this.spacerCounter++;
   }
   saveMenu() {
     this.socket.emit('create-css', this.name);
@@ -80,7 +87,7 @@ export class MenuBuilderComponent {
   // This saves the info from the Add Item form
   saveItem() {
     let item: Item = new Item({name:this.model.newItemName,price:this.model.newItemPrice,description:this.model.newItemDesc,isVegetarian:this.model.isVeget,isVegan:this.model.isVegan,isGlutenFree:this.model.isGF,calories:this.model.newItemCal});
-    console.log("Here:" + item);
+    this.menuService.newItem(item);
     this.addItemDialog.close();
   }
 

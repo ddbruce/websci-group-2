@@ -1,11 +1,12 @@
 //Items initialization, items is the list of sections
 var $items;
 var $grid;
+var $spacerCount = 0;
 
 //Goes through each item found in the menu and binds right-click event and draggability
 function makeEachClickable(i, itemElem){
     $(itemElem).bind("contextmenu", function (event) {
-
+        console.log(itemElem);
         // Avoid the real one
         event.preventDefault();
 
@@ -47,9 +48,15 @@ function initPackery(){
     $grid.find('.item').each(makeEachClickable);
 }
 
-function addItem(newSection){
+function addItem(newSectionName,newSection){
     $(function () {
-        var item = $("<div class='item'></div>");
+        if(newSectionName.length>0){
+            var item = $("<div class='item' id='"+newSectionName+"'></div>");
+        }
+        else{
+            var item = $("<div class='item' id='spacer"+$spacerCount+"'></div>");
+            $spacerCount++;
+        }
         $grid.append(item).packery('appended',item);
         item.draggable({
             containment: '#menu-builder'
@@ -81,14 +88,14 @@ var menuBuilderFunctionality = (function () {
                 initPackery();
             });
         },
-        addSection: function(){
+        addSection: function(newSectionName){
             $(function () {
-                addItem(true);
+                addItem(newSectionName,true);
             });
         },
-        addSpacer: function(){
+        addSpacer: function(newSpacerName){
             $(function () {
-                addItem(false);
+                addItem(newSpacerName,false);
             });
         },
         editItems: function () {

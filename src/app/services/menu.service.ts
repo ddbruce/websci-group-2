@@ -13,15 +13,24 @@ export class MenuService {
     private baseUrl = '/api/';
     menus: Array<Menu>;
     items: Array<Item>;
+    sections: Array<Section>;
 
   constructor(private http: Http) {
     this.menus = [];
+    this.items = [];
+    this.sections = [];
   }
 
   //Menu service handlers for menu-builder component
   newMenu(menu:Menu){
     console.log(menu);
     this.menus.push(menu);
+  }
+  newSection(section:Section){
+    this.sections.push(section);
+  }
+  newItem(item:Item){
+    this.items.push(item);
   }
 
   
