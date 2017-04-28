@@ -49,3 +49,8 @@ This command does the following:
 1. rebuilds (transpiles) `.js` files on changes to `.ts` files
 2. starts an Express webserver on `localhost:3000`
 3. rebuilds `.css` files on changes to `.scss` files
+
+### Accessing the menu editor:
+### Since the save function in the menu-builder is not yet complete, to put in menu data to play with for our demo, use menu.json, section.json, and item.json.
+### In a command line in the directory of your MongoDB installation, put mongoimport --db menuoso --collection menus --file x --jsonArray, x being menu.json, section.json, and item.json path
+### Finally, in a mongo terminal with Menuoso running, put db.users.update({"username": yourUsername}, {$set: {"menus": [ObjectId("58f816b4d22a8025b8425bf5")]}}) where yourUsername is the username you registered with

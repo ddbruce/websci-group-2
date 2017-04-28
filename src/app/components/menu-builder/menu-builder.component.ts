@@ -37,8 +37,6 @@ export class MenuBuilderComponent {
        this.sub = this.route.params.subscribe(params => {
        this.name = params['name'];
        this.desc = params['desc'];
-
-        // In a real app: dispatch action to load the details here.
       });
   }
 

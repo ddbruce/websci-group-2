@@ -1,0 +1,38 @@
+[{
+	"_id": {
+		"$oid": "58e597a4a6512a32e062c46c"
+	},
+	"name": "steak",
+	"price": 10,
+	"description": "yummy",
+	"isVegetarian": false,
+	"isVegan": false,
+	"isGlutenFree": false,
+	"calories": 100,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "58e597b7a6512a32e062c46d"
+	},
+	"name": "chicken",
+	"price": 15,
+	"description": "yummy",
+	"isVegetarian": false,
+	"isVegan": false,
+	"isGlutenFree": false,
+	"calories": 100,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "58f81512d22a8025b8425bf3"
+	},
+	"name": "penne alla vodka",
+	"price": 12,
+	"description": "pasta with pink sauce",
+	"isVegetarian": true,
+	"isGlutenFree": false,
+	"calories": 200,
+	"__v": 0
+}]

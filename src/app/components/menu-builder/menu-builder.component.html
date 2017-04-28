@@ -10,6 +10,13 @@
             <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="addSection()">Add Section</button>
             <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="addSpacer()">Add Spacer</button>
             <button type="button" class="mdl-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="saveMenu()">Save Menu</button>
+            <h3 [(ngModel)]="model.directions" [ngModelOptions]="{standalone: true}" name="directions" ngDefaultControl>Directions</h3>
+            <p>Welcome to the menu-builder, where you can build your menu at your fingertips! Right now, designing changes aren't saved in our database but we will eventually add the ability to add customizable changes!</p>
+            <p>Add Section - Create a new section box.</p>
+            <p>Add Spacer - Add a box with no content that is the same color as your background - used for spacing out the sections.</p>
+            <p>Save Menu - Save additions of your menu to the database. </p>
+            <p>Drag and resize your sections and spacers however you like!</p>
+            <p>Right-click a section to edit its contents.</p>
         </div>
     </div>
 </main>
